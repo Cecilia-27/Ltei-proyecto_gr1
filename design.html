@@ -1,776 +1,733 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Mi Sistema de Diseño — Referencia visual</title>
-<meta name="description" content="Referencia visual del sistema de diseño de Cecilia Ramírez Vázquez: colores, tipografía, espaciados, formas, elevación y componentes.">
-<style>
-@font-face{
-  font-family:"Acumin Pro";
-  src:url("Assets/fonts/Acumin-font/Acumin-RPro.woff") format("woff");
-  font-weight:400;
-  font-style:normal;
-  font-display:swap;
-}
-@font-face{
-  font-family:"Acumin Pro";
-  src:url("Assets/fonts/Acumin-font/Acumin-ItPro.woff") format("woff");
-  font-weight:400;
-  font-style:italic;
-  font-display:swap;
-}
-@font-face{
-  font-family:"Acumin Pro";
-  src:url("Assets/fonts/Acumin-font/Acumin-BdPro.woff") format("woff");
-  font-weight:700;
-  font-style:normal;
-  font-display:swap;
-}
-@font-face{
-  font-family:"Acumin Pro";
-  src:url("Assets/fonts/Acumin-font/Acumin-BdItPro.woff") format("woff");
-  font-weight:700;
-  font-style:italic;
-  font-display:swap;
-}
-@font-face{
-  font-family:"Segoe Script";
-  src:url("Assets/fonts/Segoesc-font/segoesc.woff2") format("woff2"),
-      url("Assets/fonts/Segoesc-font/segoesc.woff") format("woff");
-  font-weight:400;
-  font-style:normal;
-  font-display:swap;
-}
-:root{
-  --font-sans:"Acumin Pro","Segoe UI",system-ui,-apple-system,sans-serif;
-  --font-script:"Segoe Script","Acumin Pro",sans-serif;
-  --color-primary:#AD2B2B;
-  --color-primary-dark:#8E2222;
-  --color-secondary:#7CAAD9;
-  --color-on-primary:#FFFFFF;
-  --color-surface:#FFFFFF;
-  --color-on-surface:#000000;
-  --color-surface-variant:#F2F2F2;
-  --t-display:56px;
-  --t-h1:44px;
-  --t-h2:32px;
-  --t-h3:22px;
-  --t-body:18px;
-  --t-body-sm:15px;
-  --t-label:16px;
-  --s-xs:8px;
-  --s-sm:16px;
-  --s-md:24px;
-  --s-lg:32px;
-  --s-xl:48px;
-  --s-xxl:64px;
-  --s-3xl:80px;
-  --s-4xl:96px;
-  --s-5xl:128px;
-  --r-none:0px;
-  --r-sm:4px;
-  --r-md:8px;
-  --r-full:9999px;
-  --max-w:1440px;
-  --shadow-1:0 1px 2px rgba(0,0,0,.08);
-  --shadow-2:0 4px 8px rgba(0,0,0,.10);
-  --shadow-3:0 8px 16px rgba(0,0,0,.12);
-}
-*,*::before,*::after{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
-  margin:0;
-  font-family:var(--font-sans);
-  font-size:var(--t-body);
-  line-height:1.5;
-  color:var(--color-on-surface);
-  background:var(--color-surface);
-  -webkit-font-smoothing:antialiased;
-}
-.skip-link{
-  position:absolute;
-  left:-999px;
-  top:0;
-  z-index:100;
-  padding:var(--s-sm);
-  background:var(--color-primary);
-  color:var(--color-on-primary);
-}
-.skip-link:focus{left:0}
-a{color:inherit}
-img{max-width:100%}
-:focus-visible{outline:3px solid var(--color-primary);outline-offset:2px}
-.container{
-  max-width:var(--max-w);
-  margin-inline:auto;
-  padding-inline:var(--s-xxl);
-}
-.site-header{
-  border-bottom:1px solid var(--color-surface-variant);
-  padding-block:var(--s-5xl) var(--s-xxl);
-}
-.eyebrow{
-  margin:0 0 var(--s-xs);
-  font-size:var(--t-label);
-  font-weight:600;
-  color:var(--color-primary);
-  letter-spacing:.08em;
-  text-transform:uppercase;
-}
-.site-title{
-  margin:0;
-  font-size:clamp(32px,7vw,var(--t-display));
-  font-weight:700;
-  line-height:1.1;
-}
-.site-sub{
-  max-width:64ch;
-  margin:var(--s-md) 0 0;
-  font-size:var(--t-body);
-}
-.page-nav{
-  background:var(--color-primary);
-}
-.page-nav .container{
-  display:flex;
-  flex-wrap:wrap;
-  align-items:center;
-  gap:var(--s-sm) var(--s-lg);
-  padding-block:var(--s-sm);
-  justify-content:space-between;
-}
-.nav-logo{
-  height:56px;
-  width:auto;
-  display:block;
-  flex-shrink:0;
-}
-.nav-links{
-  display:flex;
-  flex-wrap:wrap;
-  gap:var(--s-sm) var(--s-lg);
-  justify-content:flex-end;
-}
-.page-nav a{
-  font-size:var(--t-label);
-  font-weight:400;
-  text-decoration:none;
-  color:var(--color-on-primary);
-}
-.page-nav a:hover{color:var(--color-secondary)}
-.section{
-  padding-block:var(--s-4xl) var(--s-5xl);
-  border-bottom:1px solid var(--color-surface-variant);
-}
-.section-alt{background:var(--color-surface-variant)}
-.section h2{
-  margin:0 0 var(--s-xs);
-  font-size:clamp(28px,5vw,var(--t-h1));
-  font-weight:700;
-  line-height:1.15;
-}
-.lead{max-width:70ch;margin:0 0 var(--s-xl)}
-.token-path{
-  font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
-  font-size:var(--t-body-sm);
-  color:var(--color-secondary);
-}
-/* ---- TIPOGRAFIA ---- */
-.t-display{font-size:clamp(32px,7vw,var(--t-display));font-weight:700;line-height:1.1}
-.t-h1{font-size:clamp(28px,5vw,var(--t-h1));font-weight:700;line-height:1.15}
-.t-h2{font-size:clamp(24px,4vw,var(--t-h2));font-weight:700;line-height:1.2}
-.t-h3{font-size:var(--t-h3);font-weight:700;line-height:1.25}
-.t-body{font-size:var(--t-body);font-weight:400;line-height:1.5}
-.t-body-sm{font-size:var(--t-body-sm);font-weight:400;line-height:1.4}
-.t-label{font-size:var(--t-label);font-weight:400;line-height:1.4}
-.script-accent{font-family:var(--font-script)}
-.type-list{list-style:none;margin:0;padding:0;display:grid;gap:var(--s-lg)}
-.type-item{
-  display:grid;
-  grid-template-columns:minmax(160px,240px) 1fr;
-  gap:var(--s-md);
-  align-items:center;
-  border-bottom:1px dashed var(--color-surface-variant);
-  padding-bottom:var(--s-lg);
-}
-.type-item:last-child{border-bottom:0}
-.type-meta{display:flex;flex-direction:column;gap:var(--s-xs)}
-.type-token{font-weight:600;font-size:var(--t-body-sm);color:var(--color-primary)}
-.type-value{font-size:var(--t-body-sm)}
-.type-sample{margin:0}
-/* ---- COLORES ---- */
-.color-grid{list-style:none;margin:0;padding:0;display:grid;gap:var(--s-md);grid-template-columns:repeat(auto-fill,minmax(230px,1fr))}
-.color-card{
-  font:inherit;
-  text-align:left;
-  border:1px solid var(--color-surface-variant);
-  border-radius:var(--r-md);
-  padding:0;
-  overflow:hidden;
-  background:var(--color-surface);
-  cursor:pointer;
-}
-.color-card .swatch{
-  min-height:120px;
-  display:flex;
-  flex-direction:column;
-  justify-content:flex-end;
-  padding:var(--s-sm);
-  gap:2px;
-}
-.swatch .token{font-weight:600;font-size:var(--t-body-sm)}
-.swatch .hex{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:var(--t-body-sm);opacity:.9}
-.color-meta{padding:var(--s-sm);display:flex;flex-direction:column;gap:var(--s-xs)}
-.color-meta .rol{font-size:var(--t-body-sm);margin:0}
-.copia{
-  font-size:var(--t-body-sm);
-  color:var(--color-primary);
-  font-weight:600;
-}
-/* ---- ESPACIADO ---- */
-.spacing-list{list-style:none;margin:0;padding:0;display:grid;gap:var(--s-sm)}
-.spacing-row{display:grid;grid-template-columns:120px 1fr auto;gap:var(--s-md);align-items:center}
-.spacing-name{font-size:var(--t-body-sm);font-weight:600}
-.spacing-bar{
-  height:16px;
-  background:var(--color-primary);
-  border-radius:var(--r-sm);
-}
-.spacing-value{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:var(--t-body-sm)}
-/* ---- FORMAS ---- */
-.radius-grid{list-style:none;margin:0 0 var(--s-5xl);padding:0;display:grid;gap:var(--s-md);grid-template-columns:repeat(auto-fill,minmax(150px,1fr))}
-.radius-card{text-align:center;padding:var(--s-md);border:1px solid var(--color-surface-variant);border-radius:var(--r-md)}
-.radius-box{
-  width:96px;height:96px;
-  margin:0 auto var(--s-sm);
-  background:var(--color-primary);
-  color:var(--color-on-primary);
-  display:flex;align-items:center;justify-content:center;
-  font-size:var(--t-body-sm);font-weight:600;
-}
-.radius-name{font-weight:600;font-size:var(--t-body-sm)}
-.radius-value{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:var(--t-body-sm)}
-.shape-demo{
-  display:flex;flex-wrap:wrap;gap:var(--s-xxl);
-  align-items:center;justify-content:center;
-  padding:var(--s-xxl);
-  background:var(--color-surface);
-  border:1px solid var(--color-surface-variant);
-  border-radius:var(--r-md);
-}
-.shape-avatar{
-  width:112px;height:112px;border-radius:var(--r-full);
-  background:linear-gradient(135deg,var(--color-primary) 0 46%,var(--color-secondary) 46%);
-  display:flex;align-items:center;justify-content:center;
-  color:var(--color-on-primary);font-weight:700;font-size:var(--t-h3);
-}
-.shape-overlap{position:relative;width:160px;height:120px}
-.blob{position:absolute;border-radius:var(--r-full)}
-.blob-red{
-  width:96px;height:96px;left:8px;top:14px;
-  background:var(--color-primary);
-  opacity:.92;
-}
-.blob-blue{
-  width:88px;height:88px;right:8px;top:6px;
-  background:var(--color-secondary);
-  opacity:.9;
-}
-.shape-stroke{
-  width:150px;height:60px;
-  border:4px solid var(--color-primary);
-  border-radius:var(--r-md);
-  transform:rotate(-8deg);
-}
-/* ---- ELEVACION ---- */
-.elev-grid{list-style:none;margin:0;padding:0;display:grid;gap:var(--s-md);grid-template-columns:repeat(auto-fit,minmax(190px,1fr))}
-.elev-card{
-  background:var(--color-surface);
-  border:1px solid var(--color-surface-variant);
-  border-radius:var(--r-md);
-  padding:var(--s-md);
-  min-height:150px;
-  display:flex;flex-direction:column;justify-content:space-between;
-}
-.elev-card button.front{margin:0;font:inherit;text-align:left}
-.elev-0{box-shadow:none}
-.elev-1{box-shadow:var(--shadow-1)}
-.elev-2{box-shadow:var(--shadow-2)}
-.elev-3{box-shadow:var(--shadow-3)}
-.elev-name{font-weight:600}
-.elev-desc{font-size:var(--t-body-sm);color:var(--color-on-surface)}
-/* ---- COMPONENTES ---- */
-.comp-group{margin:0 0 var(--s-5xl)}
-.comp-group h3{font-size:var(--t-h2);font-weight:700;line-height:1.2;margin:0 0 var(--s-md)}
-.note{font-size:var(--t-body-sm);max-width:70ch}
-.status{display:inline-block;margin-left:var(--s-sm);padding:2px var(--s-sm);border-radius:var(--r-full);font-size:var(--t-body-sm);font-weight:600}
-.status-on{background:var(--color-surface-variant);color:var(--color-primary)}
-.button-row{display:flex;flex-wrap:wrap;gap:var(--s-md);align-items:center}
-.btn{
-  display:inline-flex;align-items:center;justify-content:center;
-  height:44px;padding-inline:var(--s-md);
-  border-radius:var(--r-sm);
-  font-family:var(--font-sans);
-  font-size:var(--t-label);font-weight:400;line-height:1;
-  cursor:pointer;text-decoration:none;
-  border-width:2px;border-style:solid;
-  transition:background-color .18s ease,color .18s ease,transform .18s ease;
-}
-.btn-primary{background:var(--color-primary);border-color:var(--color-primary);color:var(--color-on-primary)}
-.btn-primary:hover{background:var(--color-primary-dark);border-color:var(--color-primary-dark)}
-.btn-primary:active{transform:scale(.98)}
-.btn-secondary{background:var(--color-surface);border-color:var(--color-on-surface);color:var(--color-on-surface)}
-.btn-secondary:hover{background:var(--color-primary);border-color:var(--color-primary);color:var(--color-on-primary)}
-.btn-secondary:active{transform:scale(.98)}
-.link-demo{
-  color:var(--color-secondary);
-  font-size:var(--t-label);font-weight:400;
-  text-decoration:underline;text-underline-offset:3px;
-}
-.link-demo:hover{color:var(--color-primary)}
-.chip-list{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:var(--s-sm)}
-.chip{
-  display:inline-flex;align-items:center;
-  height:32px;padding-inline:var(--s-sm);
-  border-radius:var(--r-full);
-  background:var(--color-surface-variant);
-  color:var(--color-on-surface);
-  font-size:var(--t-body-sm);font-weight:400;
-}
-.chip-accent{background:var(--color-secondary);color:var(--color-on-surface)}
-.demo-nav{display:flex;flex-wrap:wrap;gap:var(--s-sm) var(--s-lg)}
-.demo-nav a{font-size:var(--t-label);font-weight:400;text-decoration:none;padding-block:var(--s-xs)}
-.demo-nav a.is-active{color:var(--color-primary)}
-.card-demo{
-  max-width:360px;
-  background:var(--color-surface);
-  border:1px solid var(--color-surface-variant);
-  border-radius:var(--r-md);
-  overflow:hidden;
-  box-shadow:var(--shadow-1);
-}
-.card-media{
-  height:200px;
-  position:relative;
-  overflow:hidden;
-  background:
-    radial-gradient(circle at 72% 28%,var(--color-secondary) 0 22%,transparent 24%),
-    radial-gradient(circle at 26% 72%,var(--color-primary) 0 30%,transparent 32%),
-    var(--color-surface-variant);
-}
-.card-media::after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 65%,rgba(0,0,0,.35))}
-.card-body{padding:var(--s-md)}
-.card-tag{font-size:var(--t-body-sm);color:var(--color-primary);font-weight:600;margin:0 0 var(--s-xs)}
-.card-title{font-size:var(--t-h3);font-weight:600;line-height:1.25;margin:0 0 var(--s-xs)}
-.card-desc{font-size:var(--t-body-sm);margin:0 0 var(--s-sm)}
-.card-year{font-size:var(--t-body-sm);color:var(--color-primary)}
-.hero-demo{
-  background:var(--color-surface);
-  border:1px solid var(--color-surface-variant);
-  border-radius:var(--r-md);
-  padding:var(--s-xxl);max-width:720px;
-}
-.hero-demo .eyebrow{margin:0 0 var(--s-xs)}
-.hero-demo h3{font-size:var(--t-display);line-height:1.1;font-weight:700;margin:0 0 var(--s-md)}
-.accent{color:var(--color-primary)}
-.accent-blue{color:var(--color-secondary)}
-.hero-demo .lead{margin:0}
-/* ---- REGLAS ---- */
-.rules-grid{display:grid;gap:var(--s-lg);grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
-.rules-col h3{margin:0 0 var(--s-md);font-size:var(--t-h3);font-weight:600}
-.rules-list{list-style:none;margin:0;padding:0;display:grid;gap:var(--s-sm)}
-.rules-list li{display:flex;gap:var(--s-sm);align-items:flex-start;font-size:var(--t-body)}
-.marker{flex:0 0 auto;width:18px;height:18px;border-radius:var(--r-full);display:inline-flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:var(--color-on-primary);margin-top:4px}
-.marker-yes{background:var(--color-primary)}
-.marker-no{background:var(--color-on-surface)}
-.site-footer{
-  padding-block:var(--s-xxl);
-  background:var(--color-on-surface);
-  color:var(--color-surface);
-}
-.site-footer .container{display:flex;flex-wrap:wrap;gap:var(--s-sm);justify-content:space-between;align-items:center}
-.site-footer a{color:var(--color-secondary)}
-.site-footer .token-path{color:var(--color-secondary)}
-@media (max-width:1023px){
-  .container{padding-inline:var(--s-xl)}
-  .type-item{grid-template-columns:1fr}
-}
-@media (max-width:599px){
-  .container{padding-inline:var(--s-sm)}
-  .section{padding-block:var(--s-xxl) var(--s-4xl)}
-  .spacing-row{grid-template-columns:1fr;gap:var(--s-xs)}
-  .hero-demo{padding:var(--s-xl)}
-  .nav-logo{height:44px}
-}
-@media (prefers-reduced-motion:reduce){
-  html{scroll-behavior:auto}
-  *{transition:none !important}
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi Sistema de Diseño — Referencia visual</title>
+  <meta name="description" content="Referencia visual del sistema de diseño de Cecilia Ramírez Vázquez">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <style>
+    :root {
+      /* Colors from DESIGN.md */
+      --color-primary: #B82925;
+      --color-secondary: #3D5A8A;
+      --color-accent: #00A79D;
+      --color-background: #E7ECE8;
+      --color-surface: #FFFFFF;
+      --color-on-surface: #000000;
+      --color-secondary-hover: #2F4A72;
+      --color-primary-dark: #9A2222;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      color: var(--color-on-surface);
+      background: var(--color-surface);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Skip link for accessibility */
+    .skip-link {
+      position: absolute;
+      left: -999px;
+      top: 0;
+      padding: 16px;
+      background: var(--color-primary);
+      color: var(--color-on-surface);
+      z-index: 100;
+    }
+    .skip-link:focus {
+      left: 0;
+    }
+
+    /* Layout */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Typography scale based on DESIGN.md tokens */
+    .type-scale {
+      font-family: "Acumin Variable Concept", system-ui, -apple-system, sans-serif;
+    }
+    .type-scale .display { font-size: 64px; font-weight: 400; line-height: 1.1; }
+    .type-scale .h1 { font-size: 48px; font-weight: 400; line-height: 1.15; }
+    .type-scale .h2 { font-size: 40px; font-weight: 400; line-height: 1.2; }
+    .type-scale .subtitle { font-size: 24px; font-weight: 700; line-height: 1.25; font-family: "Acumin Variable Concept", system-ui, -apple-system, sans-serif; }
+    .type-scale .body { font-size: 16px; font-weight: 400; line-height: 1.5; }
+    .type-scale .small { font-size: 14px; font-weight: 400; line-height: 1.4; }
+    .type-scale .buttonLabel { font-size: 16px; font-weight: 700; line-height: 1; }
+
+    /* Colors grid */
+    .color-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 16px;
+    }
+    .color-card {
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      padding: 16px;
+      text-align: left;
+      cursor: pointer;
+      transition: box-shadow 0.2s;
+    }
+    .color-card:hover {
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+    .color-swatch {
+      width: 100%;
+      height: 100px;
+      background: var(--color-primary);
+      margin-bottom: 8px;
+      display: flex;
+      align-items: flex-end;
+      padding-bottom: 8px;
+      border-radius: 4px;
+    }
+    .color-name {
+      font-weight: 600;
+      font-size: 14px;
+      margin-bottom: 4px;
+    }
+    .color-hex {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, monospace;
+      font-size: 12px;
+      opacity: 0.8;
+      word-break: break-all;
+    }
+    .color-usage {
+      font-size: 12px;
+      color: #666;
+      margin-top: 4px;
+    }
+
+    /* Typography showcase */
+    .typography-showcase {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 16px;
+    }
+    .type-spec {
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      padding: 16px;
+      text-align: center;
+    }
+    .type-spec .name {
+      font-weight: 600;
+      font-size: 13px;
+      margin-bottom: 4px;
+    }
+    .type-spec .sample {
+      font-size: 18px;
+      margin: 8px 0;
+      min-height: 24px;
+    }
+    .type-spec .token {
+      font-size: 11px;
+      color: #666;
+      word-break: break-all;
+    }
+
+    /* Spacing scale */
+    .spacing-scale {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+      gap: 8px;
+    }
+    .spacing-item {
+      border: 1px solid #e0e0e0;
+      border-radius: 4px;
+      padding: 12px;
+      text-align: center;
+    }
+    .spacing-bar {
+      height: 20px;
+      background: #e0e0e0;
+      border-radius: 4px;
+      margin-top: 8px;
+    }
+    .spacing-value {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, monospace;
+      font-size: 12px;
+      margin-top: 4px;
+    }
+
+    /* Shapes / border radius */
+    .shape-demo {
+      display: flex;
+      gap: 24px;
+      padding: 32px 0;
+    }
+    .shape-box {
+      width: 80px;
+      height: 80px;
+      background: var(--color-primary);
+      color: var(--color-on-surface);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      font-size: 14px;
+    }
+    .shape-pill {
+      width: 80px;
+      height: 80px;
+      background: var(--color-secondary);
+      color: var(--color-on-surface);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      border-radius: 9999px;
+    }
+    .shape-avatar {
+      width: 80px;
+      height: 80px;
+      background: #3D5A8A;
+      color: var(--color-on-surface);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+    }
+
+    /* Components */
+    .component-showcase {
+      display: grid;
+      gap: 32px;
+    }
+    .component-group h3 {
+      font-size: 20px;
+      font-weight: 600;
+      margin: 0 0 16px;
+    }
+    .component-card {
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .component-header {
+      padding: 16px 20px;
+      border-bottom: 1px solid #e0e0e0;
+    }
+    .component-header .name {
+      font-weight: 600;
+      font-size: 14px;
+    }
+    .component-body {
+      padding: 20px;
+    }
+    .component-demo {
+      display: inline-flex;
+      align-items: center;
+      height: 44px;
+      padding: 0 20px;
+      border-radius: 4px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+    .component-demo:hover {
+      opacity: 0.9;
+    }
+    .component-demo:focus {
+      outline: 2px solid var(--color-primary);
+      outline-offset: 2px;
+    }
+
+    /* Navigation */
+    .nav-demo {
+      display: flex;
+      gap: 12px;
+      margin-top: 8px;
+      flex-wrap: wrap;
+    }
+    .nav-link {
+      font-size: 13px;
+      font-weight: 500;
+      padding: 8px 16px;
+      border-radius: 4px;
+      color: var(--color-on-surface);
+      text-decoration: none;
+      transition: background 0.15s;
+    }
+    .nav-link:hover {
+      background: rgba(184,41,37,0.1);
+    }
+    .nav-link.active {
+      background: var(--color-primary);
+      color: var(--color-on-surface);
+    }
+
+    /* Notes/Do's and Don'ts */
+    .rules-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 24px;
+    }
+    .rules-col h3 {
+      font-size: 18px;
+      font-weight: 600;
+      margin: 0 0 12px;
+    }
+    .rules-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .rules-list li {
+      padding: 8px 0;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+    .rules-list .marker {
+      flex: 0 0 16px;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+      font-weight: 700;
+    }
+    .marker-yes { background: var(--color-primary); color: var(--color-on-surface); }
+    .marker-no { background: var(--color-on-surface); color: var(--color-surface); }
+
+    /* Motion/reduced preference */
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      * { transition: none !important; animation: none !important; }
+    }
+
+    /* Focus visible */
+    :focus-visible {
+      outline: 2px solid var(--color-primary);
+      outline-offset: 2px;
+    }
+  </style>
 </head>
 <body>
-<a class="skip-link" href="#contenido">Saltar al contenido</a>
 
-<nav class="page-nav" aria-label="Secciones de la página">
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
   <div class="container">
-    <img class="nav-logo" src="Assets/logo/_1Recurso 11logo en blanco.svg" alt="Logotipo de Cecilia Ramírez Vázquez">
-    <div class="nav-links">
-      <a href="#paleta">Paleta</a>
-      <a href="#tipografia">Tipografía</a>
-      <a href="#espaciado">Espaciado</a>
-      <a href="#formas">Formas</a>
-      <a href="#elevacion">Elevación</a>
-      <a href="#componentes">Componentes</a>
-      <a href="#reglas">Sí y No</a>
-    </div>
-  </div>
-</nav>
 
-<header class="site-header">
-  <div class="container">
-    <p class="eyebrow">Sistema de diseño · Cecilia Ramírez Vázquez</p>
-    <h1 class="site-title">Mi Sistema de <span class="accent">Diseño</span></h1>
-    <p class="site-sub">Una identidad digital creativa, experimental y funcional: rojo y azul sobre base blanco + negro, tipografía sans serif de alto contraste, composición editorial y espacio para el protagonismo de los proyectos.</p>
-  </div>
-</header>
+    <header style="margin-bottom: 48px; padding-bottom: 32px; border-bottom: 1px solid #e0e0e0;">
+      <h1 style="margin: 0; font-size: 32px;">Mi Sistema de Diseño</h1>
+      <p style="margin: 8px 0 0; color: #666; font-size: 14px;">Cecilia Ramírez Vázquez — Referencia visual</p>
+    </header>
 
-<main id="contenido">
+    <main id="contenido">
 
-  <section class="section" id="paleta" aria-labelledby="paleta-titulo">
-    <div class="container">
-      <h2 id="paleta-titulo">Paleta de colores</h2>
-      <p class="lead">El contraste entre colores primarios y neutros crea una identidad dinámica y reconocible. El color funciona para jerarquizar, navegar y llamar la atención. <span class="token-path">{colors.primary}</span> es el ancla de la marca; <span class="token-path">{colors.secondary}</span> la complementa. Haz clic en una tarjeta para copiar su código.</p>
-      <ul class="color-grid" id="color-grid" aria-label="Tokens de color"></ul>
-      <p class="note">Combinación principal: blanco + negro como base, rojo y azul como acentos. Cualquier par de fondo y texto en los componentes supera WCAG AA (4.5:1).</p>
-    </div>
-  </section>
-
-  <section class="section" id="tipografia" aria-labelledby="tipo-titulo">
-    <div class="container">
-      <h2 id="tipo-titulo">Escala tipográfica</h2>
-      <p class="lead">Familia principal <strong>Acumin Pro</strong> (en <span class="token-path">Assets/fonts/Acumin-font</span>): Bold para la escala de títulos (display a h3) y Regular para cuerpo y labels. <strong>Segoe Script</strong> (en <span class="token-path">Assets/fonts/Segoesc-font</span>) se reserva como acento decorativo en el hero, no para texto legible.</p>
-      <ul class="type-list">
-        <li class="type-item">
-          <div class="type-meta"><span class="type-token">display · {typography.display}</span><span class="type-value">56 px · Bold 700 · 1.1</span></div>
-          <p class="type-sample t-display">Hola, soy <span class="accent">Cecilia</span></p>
-        </li>
-        <li class="type-item">
-          <div class="type-meta"><span class="type-token">h1 · {typography.h1}</span><span class="type-value">44 px · Bold 700 · 1.15</span></div>
-          <p class="type-sample t-h1">Proyectos destacados</p>
-        </li>
-        <li class="type-item">
-          <div class="type-meta"><span class="type-token">h2 · {typography.h2}</span><span class="type-value">32 px · Bold 700 · 1.2</span></div>
-          <p class="type-sample t-h2">Investigación y conceptualización</p>
-        </li>
-        <li class="type-item">
-          <div class="type-meta"><span class="type-token">h3 · {typography.h3}</span><span class="type-value">22 px · Bold 700 · 1.25</span></div>
-          <p class="type-sample t-h3">Diseño UX/UI · Branding · Editorial</p>
-        </li>
-        <li class="type-item">
-          <div class="type-meta"><span class="type-token">body · {typography.body}</span><span class="type-value">18 px · Regular 400 · 1.5</span></div>
-          <p class="type-sample t-body">El diseño no es solo la creación de piezas visuales: es una herramienta para investigar, experimentar y resolver problemas.</p>
-        </li>
-        <li class="type-item">
-          <div class="type-meta"><span class="type-token">body-sm · {typography.body-sm}</span><span class="type-value">15 px · Regular 400 · 1.4</span></div>
-          <p class="type-sample t-body-sm">2026 · Diseño digital · Prototipado · Investigación</p>
-        </li>
-        <li class="type-item">
-          <div class="type-meta"><span class="type-token">label-md · {typography.label-md}</span><span class="type-value">16 px · Regular 400 · 1.4</span></div>
-          <p class="type-sample t-label">Botones y navegación</p>
-        </li>
-      </ul>
-    </div>
-  </section>
-
-  <section class="section section-alt" id="espaciado" aria-labelledby="esp-titulo">
-    <div class="container">
-      <h2 id="esp-titulo">Escala de espaciado</h2>
-      <p class="lead">Base de 8 px. La escala completa: <span class="token-path">8 · 16 · 24 · 32 · 48 · 64 · 80 · 96 · 128</span>. El espacio en blanco es parte del sistema: separa proyectos, destaca imágenes y evita que el contenido académico se vuelva pesado.</p>
-      <ul class="spacing-list" id="spacing-list" aria-label="Tokens de espaciado"></ul>
-    </div>
-  </section>
-
-  <section class="section" id="formas" aria-labelledby="forma-titulo">
-    <div class="container">
-      <h2 id="forma-titulo">Radios y formas</h2>
-      <p class="lead">Contenedores con esquinas rectas o ligeramente redondeadas de 4–8 px; los círculos se reservan para avatares y pequeños elementos. La identidad permite formas libres, orgánicas y superposiciones rojo/azul.</p>
-      <ul class="radius-grid" aria-label="Tokens de radio">
-        <li class="radius-card">
-          <div class="radius-box" style="border-radius:var(--r-none)">0</div>
-          <div class="radius-name">none · {rounded.none}</div>
-          <div class="radius-value">0px</div>
-        </li>
-        <li class="radius-card">
-          <div class="radius-box" style="border-radius:var(--r-sm)">4</div>
-          <div class="radius-name">sm · {rounded.sm}</div>
-          <div class="radius-value">4px</div>
-        </li>
-        <li class="radius-card">
-          <div class="radius-box" style="border-radius:var(--r-md)">8</div>
-          <div class="radius-name">md · {rounded.md}</div>
-          <div class="radius-value">8px</div>
-        </li>
-        <li class="radius-card">
-          <div class="radius-box" style="border-radius:var(--r-full)">·</div>
-          <div class="radius-name">full · {rounded.full}</div>
-          <div class="radius-value">9999px</div>
-        </li>
-      </ul>
-      <div class="shape-demo" role="img" aria-label="Ejemplos de formas: avatar circular, superposición de rojo y azul, y trazo de marca">
-        <div class="shape-avatar" aria-hidden="true">CR</div>
-        <div class="shape-overlap" aria-hidden="true">
-          <span class="blob blob-red"></span>
-          <span class="blob blob-blue"></span>
+      <!-- ========================================== -->
+      <!-- Paleta de colores -->
+      <!-- ========================================== -->
+      <section style="margin-bottom: 48px;">
+        <h2 style="margin-top: 0;">Paleta de colores</h2>
+        <p style="margin: 16px 0 0; font-size: 14px; color: #666;">
+          El color funciona para jerarquizar, navegar y llamar la atención. <br>
+          <strong>Rojo corazón</strong>: marca, CTA principal. <strong>Azul creativo</strong>: secundario, acciones complementarias. <strong>Turquesa</strong>: gráfico, never text.
         </div>
-        <div class="shape-stroke" aria-hidden="true"></div>
-      </div>
-      <p class="note">La superposición de <span class="token-path">{colors.primary}</span> y <span class="token-path">{colors.secondary}</span> es un recurso experimental reservado a portadas, separadores y composiciones destacadas.</p>
-    </div>
-  </section>
-
-  <section class="section section-alt" id="elevacion" aria-labelledby="elev-titulo">
-    <div class="container">
-      <h2 id="elev-titulo">Elevación y profundidad</h2>
-      <p class="lead">Profundidad mínima y principalmente plana: el portafolio se siente editorial y gráfico. Las sombras se usan con moderación; la jerarquía se construye con color, composición y contraste.</p>
-      <ul class="elev-grid" aria-label="Niveles de elevación">
-        <li class="elev-card elev-0">
-          <div><span class="elev-name">Nivel 0 · Plano</span></div>
-          <p class="elev-desc">Fondos, navegación y proyectos en reposo. Sin sombra.</p>
-        </li>
-        <li class="elev-card elev-1">
-          <div><span class="elev-name">Nivel 1 · Interacción</span></div>
-          <p class="elev-desc">Sombra muy ligera o cambio de borde para indicar hover.</p>
-        </li>
-        <li class="elev-card elev-2">
-          <div><span class="elev-name">Nivel 2 · Destacado</span></div>
-          <p class="elev-desc">Tarjetas o ventanas que se separan del fondo.</p>
-        </li>
-        <li class="elev-card elev-3">
-          <div><span class="elev-name">Nivel 3 · Modal</span></div>
-          <p class="elev-desc">Elementos que aparecen sobre el contenido principal.</p>
-        </li>
-      </ul>
-    </div>
-  </section>
-
-  <section class="section" id="componentes" aria-labelledby="comp-titulo">
-    <div class="container">
-      <h2 id="comp-titulo">Componentes</h2>
-      <p class="lead">Muestra construida directamente desde los tokens de <span class="token-path">components</span>. Todas las áreas interactivas miden al menos 44 × 44 px.</p>
-
-      <div class="comp-group">
-        <h3>Botones</h3>
-        <div class="button-row">
-          <button class="btn btn-primary" type="button">Botón principal</button>
-          <button class="btn btn-secondary" type="button">Botón secundario</button>
-          <span class="status status-on" aria-hidden="true">hover para ver el estado</span>
-        </div>
-        <p class="note">Primario: <span class="token-path">{components.button-primary}</span> — rojo con texto blanco; en hover oscurece a <span class="token-path">{colors.primary-dark}</span>. Secundario: blanco con borde negro; en hover invierte a rojo con texto blanco. Altura 44 px, padding horizontal 24 px, radio 4 px, tipografía 16 px Regular.</p>
-      </div>
-
-      <div class="comp-group">
-        <h3>Enlaces</h3>
-        <p><a class="link-demo" href="#tipografia">Ver proyectos (enlace)</a> <span class="token-path">{components.link}</span></p>
-        <p class="note">El azul <span class="token-path">{colors.secondary}</span> se reserva a elementos interactivos y nunca debe competir con el rojo en la misma acción.</p>
-      </div>
-
-      <div class="comp-group">
-        <h3>Etiquetas / Chips</h3>
-        <ul class="chip-list" aria-label="Ejemplo de chips">
-          <li class="chip">UX/UI</li>
-          <li class="chip">Diseño digital</li>
-          <li class="chip">Investigación</li>
-          <li class="chip">Prototipado</li>
-          <li class="chip">Branding</li>
-          <li class="chip chip-accent">3D</li>
-          <li class="chip">Diseño editorial</li>
-        </ul>
-        <p class="note"><span class="token-path">{components.chip}</span> — fondo gris claro con texto negro; el azul se usa de manera puntual. Deben ser pequeñas y funcionales.</p>
-      </div>
-
-      <div class="comp-group">
-        <h3>Navegación</h3>
-        <nav class="demo-nav" id="demo-nav" aria-label="Ejemplo de navegación">
-          <a class="is-active" href="#componentes" aria-current="page">Inicio</a>
-          <a href="#componentes">Sobre mí</a>
-          <a href="#componentes">Proyectos</a>
-          <a href="#componentes">CV</a>
-          <a href="#componentes">Contacto</a>
-        </nav>
-        <p class="note">Enlaces en negro; la sección activa se indica en rojo <span class="token-path">{components.nav-active}</span>.</p>
-      </div>
-
-      <div class="comp-group">
-        <h3>Tarjeta de proyecto</h3>
-        <article class="card-demo">
-          <div class="card-media" role="img" aria-label="Imagen de portada del proyecto con formas rojas y azules"></div>
-          <div class="card-body">
-            <p class="card-tag">Diseño UX/UI · Investigación</p>
-            <h4 class="card-title">Aplicación para hábitos de lectura</h4>
-            <p class="card-desc">Investigación, conceptualización y prototipado de una interfaz editorial para lectores académicos.</p>
-            <p class="card-year">2026 · Prototipado en Figma</p>
+        <div class="color-grid">
+          <div class="color-card" style="--color-primary: #B82925;">
+            <div class="color-swatch" style="background: #B82925;"></div>
+            <div class="color-name">Rojo corazón</div>
+            <div class="color-hex">#B82925</div>
+            <div class="color-usage">CTA principal, títulos, marcas, navegación activa</div>
           </div>
-        </article>
-        <p class="note"><span class="token-path">{components.card}</span> — fondo blanco, imagen protagonista, categoría en rojo, descripción breve y año en pequeño. En hover la imagen escala sutilmente.</p>
-      </div>
-
-      <div class="comp-group">
-        <h3>Hero</h3>
-        <div class="hero-demo">
-          <p class="eyebrow">Portafolio académico</p>
-          <h3>Diseño <span class="accent">creativo</span>, <span class="accent-blue script-accent">experimental</span> y funcional</h3>
-          <p class="lead">Quién soy + qué hago + qué estoy estudiando y diseñando.</p>
+          <div class="color-card" style="--color-secondary: #3D5A8A;">
+            <div class="color-swatch" style="background: #3D5A8A;"></div>
+            <div class="color-name">Azul creativo</div>
+            <div class="color-hex">#3D5A8A</div>
+            <div class="color-usage">Subtítulos, enlaces secundarios, botones secundarios, etiquetas</div>
+          </div>
+          <div class="color-card" style="--color-accent: #00A79D;">
+            <div class="color-swatch" style="background: #00A79D;"></div>
+            <div class="color-name">Turquesa</div>
+            <div class="color-hex">#00A79D</div>
+            <div class="color-usage">SOLO gráfico: hover, indicadores, separadores. NUNCA texto.</div>
+          </div>
+          <div class="color-card" style="--color-background: #E7ECE8;">
+            <div class="color-swatch" style="background: #E7ECE8;"></div>
+            <div class="color-name">Verde muy claro</div>
+            <div class="color-hex">#E7ECE8</div>
+            <div class="color-usage">Fondo base predominante, secciones principales</div>
+          </div>
+          <div class="color-card" style="--color-surface: #FFFFFF;">
+            <div class="color-swatch" style="background: #FFFFFF;"></div>
+            <div class="color-name">Blanco</div>
+            <div class="color-hex">#FFFFFF</div>
+            <div class="color-usage">Tarjetas, campos, contenedores, superficies</div>
+          </div>
+          <div class="color-card" style="--color-on-surface: #000000;">
+            <div class="color-swatch" style="background: #000000;"></div>
+            <div class="color-name">Negro</div>
+            <div class="color-hex">#000000</div>
+            <div class="color-usage">Texto principal, navegación, máximo contraste</div>
+          </div>
         </div>
-        <p class="note">Fondo blanco, tipografía negra y acentos rojo/azul. El hero puede usar composiciones asimétricas y elementos superpuestos.</p>
-      </div>
-    </div>
-  </section>
+      </section>
 
-  <section class="section section-alt" id="reglas" aria-labelledby="reglas-titulo">
-    <div class="container">
-      <h2 id="reglas-titulo">Reglas: lo que sí y lo que no</h2>
-      <div class="rules-grid">
-        <div class="rules-col">
-          <h3>Lo que sí se permite</h3>
-          <ul class="rules-list">
-            <li><span class="marker marker-yes" aria-hidden="true">✓</span>Rojo como color principal de acento.</li>
-            <li><span class="marker marker-yes" aria-hidden="true">✓</span>Azul como color secundario.</li>
-            <li><span class="marker marker-yes" aria-hidden="true">✓</span>Negro y blanco como base visual.</li>
-            <li><span class="marker marker-yes" aria-hidden="true">✓</span>Priorizar la presentación visual de los proyectos.</li>
-            <li><span class="marker marker-yes" aria-hidden="true">✓</span>Composiciones asimétricas y suficiente espacio en blanco.</li>
-            <li><span class="marker marker-yes" aria-hidden="true">✓</span>Jerarquía clara y legible para el contenido académico.</li>
-          </ul>
+      <!-- ========================================== -->
+      <!-- Escala tipográfica -->
+      <!-- ========================================== -->
+      <section style="margin-bottom: 48px;">
+        <h2>Escala tipográfica</h2>
+        <p style="margin: 16px 0 0; font-size: 14px; color: #666;">
+          Dos familias: <strong>Quimby Gobernatorial</strong> (expresiva, identidad) y <strong>Acumin Variable Concept</strong> (funcional, lectura).
+        </p>
+        <div class="typography-showcase">
+          <div class="type-spec">
+            <div class="name">display · 64px</div>
+            <div class="sample type-scale display" style="font-family: 'Quimby Gobernatorial', serif;">Hola, soy Ceci</div>
+            <div class="token">typography.display</div>
+          </div>
+          <div class="type-spec">
+            <div class="name">h1 · 48px</div>
+            <div class="sample type-scale h1" style="font-family: 'Quimby Gobernatorial', serid;">Proyectos destacados</div>
+            <div class="token">typography.h1</div>
+          </div>
+          <div class="type-spec">
+            <div class="name">h2 · 40px</div>
+            <div class="sample type-scale h2" style="font-family: 'Quimby Gobernatorial', serif;">Investigación y diseño</div>
+            <div class="token">typography.h2</div>
+          </div>
+          <div class="type-spec">
+            <div class="name">subtitle · 24px</div>
+            <div class="sample type-scale subtitle" style="font-family: 'Acumin Variable Concept', sans-serif;">Subtítulo de sección</div>
+            <div class="token">typography.subtitle</div>
+          </div>
+          <div class="type-spec">
+            <div class="name">body · 16px</div>
+            <div class="sample type-scale body">El diseño es una herramienta para investigar, experimentar y resolver problemas. Se construye sobre una base de curiosidad y método.</div>
+            <div class="token">typography.body</div>
+          </div>
+          <div class="type-spec">
+            <div class="name">small · 14px</div>
+            <div class="sample type-scale small">2026 · Diseño digital · Prototipado</div>
+            <div class="token">typography.small</div>
+          </div>
+          <div class="type-spec">
+            <div class="name">buttonLabel · 16px</div>
+            <div class="sample type-scale buttonLabel">Botón</div>
+            <div class="token">typography.buttonLabel</div>
+          </div>
+          <div class="type-spec">
+            <div class="name">link · 16px</div>
+            <div class="sample type-scale link" style="color: var(--color-primary);">Enlace</div>
+            <div class="token">typography.link</div>
+          </div>
         </div>
-        <div class="rules-col">
-          <h3>Lo que no se permite</h3>
-          <ul class="rules-list">
-            <li><span class="marker marker-no" aria-hidden="true">✕</span>Colores fuera de la paleta.</li>
-            <li><span class="marker marker-no" aria-hidden="true">✕</span>Rojo y azul combinados en el mismo botón o acción.</li>
-            <li><span class="marker marker-no" aria-hidden="true">✕</span>Sombras pesadas o animaciones excesivas.</li>
-            <li><span class="marker marker-no" aria-hidden="true">✕</span>Tipografías decorativas que dificulten la lectura.</li>
-            <li><span class="marker marker-no" aria-hidden="true">✕</span>Sacrificar la legibilidad por la experimentación.</li>
-            <li><span class="marker marker-no" aria-hidden="true">✕</span>Convertir todos los elementos en tarjetas.</li>
-          </ul>
+
+        <p style="margin: 24px 0 0; font-size: 13px; color: #666;">
+          Jerarquía por tamaño, peso, estilo y color — nunca opacidad. Cuerpo nunca baja de 16px. Quimby solo en títulos e identidad.
+        </p>
+      </section>
+
+      <!-- ========================================== -->
+      <!-- Espaciado -->
+      <!-- ========================================== -->
+      <section style="margin-bottom: 48px;">
+        <h2>Escala de espaciado</h2>
+        <p style="margin: 16px 0 0; font-size: 14px; color: #666;">
+          Base de 8px. Valores: 8 · 16 · 24 · 32 · 48 · 64 · 80 · 96px.
+        </p>
+        <div class="spacing-scale">
+          <div class="spacing-item">
+            <div class="spacing-bar" style="width: 8px;"></div>
+            <div class="spacing-value">8px</div>
+          </div>
+          <div class="spacing-item">
+            <div class="spacing-bar" style="width: 16px;"></div>
+            <div class="spacing-value">16px</div>
+          </div>
+          <div class="spacing-item">
+            <div class="spacing-bar" style="width: 24px;"></div>
+            <div class="spacing-value">24px</div>
+          </div>
+          <div class="spacing-item">
+            <div class="spacing-bar" style="width: 32px;"></div>
+            <div class="spacing-value">32px</div>
+          </div>
+          <div class="spacing-item">
+            <div class="spacing-bar" style="width: 48px;"></div>
+            <div class="spacing-value">48px</div>
+          </div>
+          <div class="spacing-item">
+            <div class="spacing-bar" style="width: 64px;"></div>
+            <div class="spacing-value">64px</div>
+          </div>
+          <div class="spacing-item">
+            <div class="spacing-bar" style="width: 80px;"></div>
+            <div class="spacing-value">80px</div>
+          </div>
+          <div class="spacing-item">
+            <div class="spacing-bar" style="width: 96px;"></div>
+            <div class="spacing-value">96px</div>
+          </div>
         </div>
-      </div>
-    </div>
-  </section>
+        <p style="margin: 24px 0 0; font-size: 13px; color: #666;">
+          Elementos internos: 12–24px. Separaciones de sección: 64–96px. Márgenes móviles: 16–24px.
+        </p>
+      </section>
 
-</main>
+      <!-- ========================================== -->
+      <!-- Radios y formas -->
+      <!-- ========================================== -->
+      <section style="margin-bottom: 48px;">
+        <h2>Radios y formas</h2>
+        <p style="margin: 16px 0 0; font-size: 14px; color: #666;">
+          Contenedores con esquinas redondeadas de 16px. Formas completamente redondeadas con 9999px (píldora/círculo).
+        </p>
+        <div class="shape-demo">
+          <div class="shape-box">16px</div>
+          <div class="shape-pill">9999px</div>
+          <div class="shape-avatar">CR</div>
+        </div>
+        <p style="margin: 24px 0 0; font-size: 13px; color: #666;">
+          - Tarjetas y contenedores: 16px<br>
+          - Elementos redondeados/píldora: 9999px<br>
+          - Formas orgánicas/ilustraciones: sin geometría perfecta, imperfección controlada es parte de la personalidad
+        </p>
+      </section>
 
-<footer class="site-footer">
-  <div class="container">
-    <p>Mi Sistema de Diseño · Cecilia Ramírez Vázquez</p>
-    <p>Tokens extraídos de <a href="DESIGN.md">DESIGN.md</a> · Validado con <span class="token-path">@google/design.md</span></p>
+      <!-- ========================================== -->
+      <!-- Profundidad y elevación -->
+      <!-- ========================================== -->
+      <section style="margin-bottom: 48px;">
+        <h2>Elevación y profundidad</h2>
+        <p style="margin: 16px 0 0; font-size: 14px; color: #666;">
+          Diseño principalmente plano. Separación por color, composición y contraste. Sombras muy suaves solo en hover.
+        </p>
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 16px;">
+          <div style="border: 1px solid #e0e0e0; border-radius: 8px; padding: 16px; text-align: center;">
+            <div style="font-weight: 600; font-size: 13px; margin-bottom: 4px;">Plano</div>
+            <p style="font-size: 12px; color: #666;">Fondos, navegación, reposo — sin sombra</p>
+          </div>
+          <div style="border: 1px solid #e0e0e0; border-radius: 8px; padding: 16px; text-align: center;">
+            <div style="font-weight: 600; font-size: 13px; margin-bottom: 4px;">Elevación sutil</div>
+            <p style="font-size: 12px; color: #666;">Hover en tarjetas/elementos interactivos</p>
+          </div>
+          <div style="border: 1px solid #e0e0e0; border-radius: 8px; padding: 16px; text-align: center;">
+            <div style="font-weight: 600; font-size: 13px; margin-bottom: 4px;">Contraste</div>
+            <p style="font-size: 12px; color: #666;">Fondos de color para separar secciones</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========================================== -->
+      <!-- Componentes -->
+      <!-- ========================================== -->
+      <section style="margin-bottom: 48px;">
+        <h2>Componentes</h2>
+        <p style="margin: 16px 0 0; font-size: 14px; color: #666;">
+          Muestra construida desde los tokens de components. Áreas interactivas mínimo 44 × 44 px.
+        </p>
+
+        <!-- Botones -->
+        <div class="component-group">
+          <h3>Botones y CTA</h3>
+          <div class="component-card">
+            <div class="component-header">
+              <span class="component-name">buttonPrimary</span>
+            </div>
+            <div class="component-body">
+              <button class="component-demo" style="background: var(--color-primary); color: var(--color-on-surface);">
+                CTA Principal
+              </button>
+              <span style="display: block; margin-top: 8px; font-size: 12px; color: #666;">
+                Fondo: {colors.primary} | Texto: {colors.surface} | 44px alto | Radio 16px
+              </span>
+            </div>
+          </div>
+          <div class="component-card">
+            <div class="component-header">
+              <span class="component-name">buttonSecondary</span>
+            </div>
+            <div class="component-body">
+              <button class="component-demo" style="background: var(--color-surface); color: var(--color-primary); border: 1px solid var(--color-primary);">
+                Secundario (rojo)
+              </button>
+              <span style="display: block; margin-top: 8px; font-size: 12px; color: #666;">
+                Fondo: {colors.background} | Texto: {colors.primary} | Borde rojo | 44px alto
+              </span>
+            </div>
+          </div>
+          <div class="component-card">
+            <div class="component-header">
+              <span class="component-name">buttonSecondaryAlt</span>
+            </div>
+            <div class="component-body">
+              <button class="component-demo" style="background: var(--color-surface); color: var(--color-secondary); border: 1px solid var(--color-secondary);">
+                Secundario (azul)
+              </button>
+              <span style="display: block; margin-top: 8px; font-size: 12px; color: #666;">
+                Fondo: {colors.background} | Texto: {colors.secondary} | Borde azul | 44px alto
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Enlaces -->
+        <div class="component-group">
+          <h3>Enlaces</h3>
+          <div class="component-card">
+            <div class="component-header">
+              <span class="component-name">linkPrimary</span>
+            </div>
+            <div class="component-body">
+              <a class="component-demo" style="color: var(--color-secondary); text-decoration: underline underline offset 3px;">
+                Enlace secundario (azul)
+              </a>
+              <span style="display: block; margin-top: 8px; font-size: 12px; color: #666;">
+                Color: {colors.secondary} | 16px Bold | Hover: subrayado + cambio de color
+              </span>
+            </div>
+          </div>
+          <div class="component-card">
+            <div class="component-header">
+              <span class="component-name">linkSecondary</span>
+            </div>
+            <div class="component-body">
+              <a class="component-demo" style="color: var(--color-primary); text-decoration: underline underline offset 3px;">
+                Enlace primario (rojo)
+              </a>
+              <span style="display: block; margin-top: 8px; font-size: 12px; color: #666;">
+                Color: {colors.primary} | 16px Bold | Hover: subrayado + rojo más oscuro
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tarjetas -->
+        <div class="component-group">
+          <h3>Tarjetas de proyecto</h3>
+          <div class="component-card" style="background: var(--color-surface);">
+            <div class="component-header" style="border-bottom: 1px solid #e0e0e0; padding: 16px 20px;">
+              <span class="component-name" style="font-weight: 600;">Diseño UX/UI · Investigación</span>
+            </div>
+            <div class="component-body" style="padding: 20px;">
+              <h4 style="margin: 0 0 8px; font-size: 16px; font-weight: 600;">Aplicación para hábitos de lectura</h4>
+              <p style="margin: 0 0 12px; font-size: 14px; color: #666;">Investigación, conceptualización y prototipado de una interfaz editorial para lectores académicos.</p>
+              <p style="margin: 0; font-size: 12px; color: var(--color-primary);">2026 · Prototipado en Figma</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Navegación -->
+        <div class="component-group">
+          <h3>Navegación</h3>
+          <div class="nav-demo" role="navigation" aria-label="Ejemplo de navegación principal">
+            <a class="nav-link active" href="#">Inicio</a>
+            <a class="nav-link" href="#sobre">Sobre mí</a>
+            <a class="nav-link" href="#proyectos">Proyectos</a>
+            <a class="nav-link" href="#cv">CV</a>
+            <a class="nav-link" href="#contacto">Contacto</a>
+          </div>
+          <p style="margin: 16px 0 0; font-size: 12px; color: #666;">
+            Fondo: {colors.primary} | Texto: {colors.surface} | Estado activo: cambio de color + subrayado
+          </p>
+        </div>
+
+        <!-- Chips / etiquetas -->
+        <div class="component-group">
+          <h3>Chips / Etiquetas</h3>
+          <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px;">
+            <span style="display: inline-flex; align-items: center; padding: 4px 12px; background: var(--color-background); color: var(--color-on-surface); border-radius: 9999px; font-size: 12px;">UX/UI</span>
+            <span style="display: inline-flex; align-items: center; padding: 4px 12px; background: var(--color-secondary); color: var(--color-on-surface); border-radius: 9999px; font-size: 12px;">Diseño digital</span>
+            <span style="display: inline-flex; align-items: center; padding: 4px 12px; background: var(--color-accent); color: var(--color-on-surface); border-radius: 9999px; font-size: 12px;">Prototipado</span>
+          </div>
+        </div>
+
+        <!-- Separador -->
+        <div class="component-group">
+          <h3>Separador</h3>
+          <div style="height: 1px; background: var(--color-accent); margin: 32px 0;"></div>
+          <p style="margin: 16px 0 0; font-size: 12px; color: #666;">
+            Color: {colors.accent}. Uso: únicamente para marcar cambios importantes. No como línea decorativa constante.
+          </p>
+        </div>
+
+        <!-- Footer -->
+        <div class="component-group">
+          <h3>Footer</h3>
+          <div style="background: var(--color-on-surface); color: var(--color-surface); padding: 32px 24px; text-align: center;">
+            <p>Hecho con el corazón</p>
+          </div>
+        </div>
+
+        <!-- Indicador de progreso -->
+        <div class="component-group">
+          <h3>Indicador de progreso</h3>
+          <div style="height: 3px; background: var(--color-primary); width: 0%; transition: width 0.3s ease;"></div>
+          <p style="margin: 16px 0 0; font-size: 12px; color: #666;">
+            Color: {colors.primary}. Posición: barra superior. Avance conforme usuario hace scroll.
+          </p>
+        </div>
+      </section>
+
+      <!-- ========================================== -->
+      <!-- Reglas (sí y no) -->
+      <!-- ========================================== -->
+      <section style="margin-bottom: 48px;">
+        <h2>Reglas: lo que sí y lo que no</h2>
+        <div class="rules-grid">
+          <div class="rules-col">
+            <h3>Lo que sí se permite</h3>
+            <ul class="rules-list">
+              <li><span class="marker marker-yes">✓</span>Rojo como color principal de acento y CTA.</li>
+              <li><span class="marker marker-yes">✓</span>Azul como color secundario para información y acciones complementarias.</li>
+              <li><span class="marker marker-yes">✓</span>Negro y blanco como base visual y máximo contraste.</li>
+              <li><span class="marker marker-yes">✓</span>Priorizar la presentación visual de los proyectos.</li>
+              <li><span class="marker marker-yes">✓</span>Composiciones asimétricas y suficiente espacio en blanco.</li>
+              <li><span class="marker marker-yes">✓</span>Jerarquía clara y legible para el contenido académico.</li>
+              <li><span class="marker marker-yes">✓</span>Permitir superposiciones y desplazamientos gráficos que no afecten la lectura.</li>
+            </ul>
+          </div>
+          <div class="rules-col">
+            <h3>Lo que no se permite</h3>
+            <ul class="rules-list">
+              <li><span class="marker marker-no">✗</span>Colores fuera de la paleta definida.</li>
+              <li><span class="marker marker-no">✗</span>Rojo y azul combinados en el mismo botón o acción.</li>
+              <li><span class="marker marker-no">✗</span>Sombras pesadas o animaciones excesivas que contradigan el lenguaje plano.</li>
+              <li><span class="marker marker-no">✗</span>Tipografías decorativas que dificultan la lectura.</li>
+              <li><span class="marker marker-no">✗</span>Sacrificar la legibilidad por la experimentación.</li>
+              <li><span class="marker marker-no">✗</span>Convertir todos los elementos en formas redondeadas.</li>
+              <li><span class="marker marker-no">✗</span>Utilizar el turquesa como color dominante de la interfaz o como texto.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
   </div>
-</footer>
 
-<div id="copia-aviso" class="skip-link" role="status" aria-live="polite" style="position:fixed;left:50%;transform:translateX(-50%);bottom:var(--s-md);top:auto;border-radius:var(--r-full)"></div>
+  <footer style="margin-top: 48px; padding: 32px 0; color: #666; font-size: 13px; text-align: center;">
+    Mi Sistema de Diseño · Cecilia Ramírez Vázquez · Tokens extraídos de DESIGN.md
+  </footer>
 
-<script>
-const colores = [
-  { token: "primary", hex: "#AD2B2B", rol: "Color principal de identidad. Títulos, palabras clave, acentos, navegación activa y llamadas de atención." },
-  { token: "primary-dark", hex: "#8E2222", rol: "Hover del color principal: el rojo se oscurece ligeramente en interacción." },
-  { token: "secondary", hex: "#7CAAD9", rol: "Color secundario. Información secundaria, elementos interactivos y recursos gráficos." },
-  { token: "on-primary", hex: "#FFFFFF", rol: "Texto e iconos sobre colores rojos." },
-  { token: "surface", hex: "#FFFFFF", rol: "Fondo principal del portafolio. Espacios limpios y protagonismo de los proyectos." },
-  { token: "on-surface", hex: "#000000", rol: "Texto, títulos, navegación y elementos de mayor contraste." },
-  { token: "surface-variant", hex: "#F2F2F2", rol: "Fondo secundario para secciones, tarjetas o bloques de información." }
-];
-
-function legible(hex){
-  const c = hex.replace("#", "");
-  const r = parseInt(c.slice(0,2),16);
-  const g = parseInt(c.slice(2,4),16);
-  const b = parseInt(c.slice(4,6),16);
-  const lum = (0.2126*r + 0.7152*g + 0.0722*b) / 255;
-  return lum > 0.55 ? "#000000" : "#FFFFFF";
-}
-
-function renderColores(){
-  const lista = document.getElementById("color-grid");
-  lista.innerHTML = "";
-  colores.forEach(c => {
-    const li = document.createElement("li");
-    const card = document.createElement("button");
-    card.type = "button";
-    card.className = "color-card";
-    card.dataset.hex = c.hex;
-    card.setAttribute("aria-label", "Token " + c.token + " " + c.hex + ". Copiar al portapapeles");
-    const fg = legible(c.hex);
-    card.innerHTML =
-      '<span class="swatch" style="background:' + c.hex + ';color:' + fg + '">' +
-        '<span class="token">' + c.token + '</span>' +
-        '<span class="hex">' + c.hex + '</span>' +
-      '</span>' +
-      '<span class="color-meta">' +
-        '<span class="token-path">{colors.' + c.token + '}</span>' +
-        '<p class="rol">' + c.rol + '</p>' +
-        '<span class="copia">Copiar&nbsp;' + c.hex + '</span>' +
-      '</span>';
-    card.addEventListener("click", function(){ copiarHex(c.hex); });
-    li.appendChild(card);
-    lista.appendChild(li);
-  });
-}
-
-async function copiarHex(hex){
-  let ok = false;
-  try { await navigator.clipboard.writeText(hex); ok = true; }
-  catch(err){
-    const ta = document.createElement("textarea");
-    ta.value = hex;
-    document.body.appendChild(ta);
-    ta.select();
-    ok = document.execCommand("copy");
-    ta.remove();
-  }
-  const aviso = document.getElementById("copia-aviso");
-  aviso.style.background = ok ? "#AD2B2B" : "#000000";
-  aviso.textContent = ok ? "Copiado " + hex : "No se pudo copiar";
-}
-
-function renderEspaciado(){
-  const escala = [
-    { token: "xs", value: 8 },
-    { token: "sm", value: 16 },
-    { token: "md", value: 24 },
-    { token: "lg", value: 32 },
-    { token: "xl", value: 48 },
-    { token: "xxl", value: 64 },
-    { token: "3xl", value: 80 },
-    { token: "4xl", value: 96 },
-    { token: "5xl", value: 128 }
-  ];
-  const lista = document.getElementById("spacing-list");
-  lista.innerHTML = "";
-  escala.forEach(s => {
-    const li = document.createElement("li");
-    li.className = "spacing-row";
-    li.innerHTML =
-      '<span class="spacing-name">' + s.token + ' · {spacing.' + s.token + '}</span>' +
-      '<span class="spacing-bar" style="width:' + s.value + 'px"></span>' +
-      '<span class="spacing-value">' + s.value + 'px</span>';
-    lista.appendChild(li);
-  });
-}
-
-const navDemo = document.getElementById("demo-nav");
-navDemo.addEventListener("click", function(e){
-  const enlace = e.target.closest("a");
-  if(!enlace){ return; }
-  e.preventDefault();
-  navDemo.querySelectorAll("a").forEach(a => {
-    a.classList.remove("is-active");
-    a.removeAttribute("aria-current");
-  });
-  enlace.classList.add("is-active");
-  enlace.setAttribute("aria-current", "page");
-});
-
-renderColores();
-renderEspaciado();
-</script>
 </body>
 </html>
