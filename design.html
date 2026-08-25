@@ -227,13 +227,11 @@
     .hero-illustration img { width: 100%; height: auto; display: block; }
     .hero-text {
       position: relative; z-index: 2;
-      display: flex; flex-direction: column; align-items: flex-end;
-      animation: hero-reveal-right 1.2s cubic-bezier(0.22,1,0.36,1) 0.15s forwards;
-      opacity: 0;
+      display: flex; flex-direction: column; align-items: center;
     }
     .hero-title-wrapper {
       position: relative; display: flex; flex-direction: column;
-      align-items: flex-end; padding: 0.15em 0.4em;
+      align-items: center; padding: 0.15em 0.4em;
       background: rgba(231,236,232,0.85); border-radius: 8px;
     }
     .hero-title {
@@ -244,9 +242,7 @@
     .hero-title-script {
       font-family: var(--font-expressive); font-size: clamp(52px, 7vw, 108px);
       font-weight: 400; font-style: italic; color: var(--color-primary);
-      line-height: 1; margin-top: -0.1em; text-align: right;
-      animation: hero-reveal-from-right 1s cubic-bezier(0.22,1,0.36,1) 0.65s forwards;
-      opacity: 0;
+      line-height: 1; margin-top: -0.1em; text-align: center;
     }
     @keyframes hero-reveal-left {
       0% { opacity: 0; transform: translateX(-50px) scale(0.92); filter: blur(4px); }
