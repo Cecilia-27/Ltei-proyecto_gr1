@@ -774,61 +774,61 @@
     <!-- PALETA DE COLORES -->
     <section class="section" id="colors">
       <div class="section-inner">
-        <h2 class="section-title">Paleta de colores</h2>
-        <p class="section-subtitle">el color como lenguaje de identidad</p>
-        <p style="text-align:center; max-width:700px; margin:0 auto var(--space-5); font-size:17px; line-height:1.7;">
-          El color funciona para jerarquizar, navegar y llamar la atención.
-          <strong style="color:var(--color-primary);">Rojo corazón</strong>: marca, CTA principal.
-          <strong style="color:var(--color-secondary);">Azul creativo</strong>: secundario, acciones complementarias.
-          <strong style="color:var(--color-accent);">Turquesa</strong>: gráfico, never text.
-        </p>
-        <div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(180px,1fr)); gap:var(--space-3);">
-          <div style="background:var(--color-surface); border-radius:var(--rounded-card); overflow:hidden; transition:transform 0.2s;" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform='none'">
-            <div style="width:100%; height:120px; background:#B82925;"></div>
-            <div style="padding:var(--space-2);">
-              <div style="font-weight:700; font-size:14px;">Rojo corazón</div>
-              <div style="font-family:monospace; font-size:12px; opacity:0.7;">#B82925</div>
-              <div style="font-size:12px; opacity:0.6; margin-top:8px;">CTA principal, títulos, marcas, navegación activa</div>
+        <div class="habilidades-composition">
+          <!-- Columna izquierda: paleta de colores -->
+          <div class="habilidades-illustration">
+            <div style="display:flex; flex-direction:column; gap:var(--space-2); width:min(380px, 80vw);">
+              <div style="width:100%; height:120px; background:var(--color-primary); border-radius:var(--rounded-card); transition:transform 0.2s;" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform='none'"></div>
+              <div style="width:100%; height:120px; background:var(--color-secondary); border-radius:var(--rounded-card); transition:transform 0.2s;" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform='none'"></div>
+              <div style="width:100%; height:120px; background:var(--color-accent); border-radius:var(--rounded-card); transition:transform 0.2s;" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform='none'"></div>
+              <div style="width:100%; height:120px; background:var(--color-background); border-radius:var(--rounded-card); border:1px solid rgba(0,0,0,0.08); transition:transform 0.2s;" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform='none'"></div>
+              <div style="width:100%; height:120px; background:var(--color-surface); border-radius:var(--rounded-card); border:1px solid rgba(0,0,0,0.08); transition:transform 0.2s;" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform='none'"></div>
+              <div style="width:100%; height:120px; background:var(--color-on-surface); border-radius:var(--rounded-card); transition:transform 0.2s;" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform='none'"></div>
             </div>
           </div>
-          <div style="background:var(--color-surface); border-radius:var(--rounded-card); overflow:hidden; transition:transform 0.2s;" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform='none'">
-            <div style="width:100%; height:120px; background:#3D5A8A;"></div>
-            <div style="padding:var(--space-2);">
-              <div style="font-weight:700; font-size:14px;">Azul creativo</div>
-              <div style="font-family:monospace; font-size:12px; opacity:0.7;">#3D5A8A</div>
-              <div style="font-size:12px; opacity:0.6; margin-top:8px;">Subtítulos, enlaces secundarios, botones secundarios, etiquetas</div>
+          <!-- Columna derecha: descripciones -->
+          <div class="habilidades-content">
+            <div class="habilidades-header">
+              <h2 class="habilidades-title">Paleta de colores</h2>
+              <p class="habilidades-subtitle">el color como lenguaje de identidad</p>
             </div>
-          </div>
-          <div style="background:var(--color-surface); border-radius:var(--rounded-card); overflow:hidden; transition:transform 0.2s;" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform='none'">
-            <div style="width:100%; height:120px; background:#00A79D;"></div>
-            <div style="padding:var(--space-2);">
-              <div style="font-weight:700; font-size:14px;">Turquesa</div>
-              <div style="font-family:monospace; font-size:12px; opacity:0.7;">#00A79D</div>
-              <div style="font-size:12px; opacity:0.6; margin-top:8px;">SOLO gráfico: hover, indicadores, separadores. NUNCA texto.</div>
-            </div>
-          </div>
-          <div style="background:var(--color-surface); border-radius:var(--rounded-card); overflow:hidden; transition:transform 0.2s;" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform='none'">
-            <div style="width:100%; height:120px; background:#E7ECE8;"></div>
-            <div style="padding:var(--space-2);">
-              <div style="font-weight:700; font-size:14px;">Verde muy claro</div>
-              <div style="font-family:monospace; font-size:12px; opacity:0.7;">#E7ECE8</div>
-              <div style="font-size:12px; opacity:0.6; margin-top:8px;">Fondo base predominante, secciones principales</div>
-            </div>
-          </div>
-          <div style="background:var(--color-surface); border-radius:var(--rounded-card); overflow:hidden; transition:transform 0.2s; border:1px solid rgba(0,0,0,0.08);" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform='none'">
-            <div style="width:100%; height:120px; background:#FFFFFF;"></div>
-            <div style="padding:var(--space-2);">
-              <div style="font-weight:700; font-size:14px;">Blanco</div>
-              <div style="font-family:monospace; font-size:12px; opacity:0.7;">#FFFFFF</div>
-              <div style="font-size:12px; opacity:0.6; margin-top:8px;">Tarjetas, campos, contenedores, superficies</div>
-            </div>
-          </div>
-          <div style="background:var(--color-surface); border-radius:var(--rounded-card); overflow:hidden; transition:transform 0.2s;" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform='none'">
-            <div style="width:100%; height:120px; background:#000000;"></div>
-            <div style="padding:var(--space-2);">
-              <div style="font-weight:700; font-size:14px;">Negro</div>
-              <div style="font-family:monospace; font-size:12px; opacity:0.7;">#000000</div>
-              <div style="font-size:12px; opacity:0.6; margin-top:8px;">Texto principal, navegación, máximo contraste</div>
+            <p class="habilidades-description">
+              El color funciona para jerarquizar, navegar y llamar la atención.
+              <strong style="color:var(--color-primary);">Rojo corazón</strong>: marca, CTA principal.
+              <strong style="color:var(--color-secondary);">Azul creativo</strong>: secundario, acciones complementarias.
+              <strong style="color:var(--color-accent);">Turquesa</strong>: gráfico, never text.
+            </p>
+            <div class="habilidades-list">
+              <div class="habilidad-item">
+                <div class="habilidad-dot" style="background:var(--color-primary);"></div>
+                <div class="habilidad-name">Rojo corazón</div>
+                <div class="habilidad-desc">CTA principal, títulos, marcas, navegación activa</div>
+              </div>
+              <div class="habilidad-item">
+                <div class="habilidad-dot" style="background:var(--color-secondary);"></div>
+                <div class="habilidad-name">Azul creativo</div>
+                <div class="habilidad-desc">Subtítulos, enlaces secundarios, botones secundarios, etiquetas</div>
+              </div>
+              <div class="habilidad-item">
+                <div class="habilidad-dot" style="background:var(--color-accent);"></div>
+                <div class="habilidad-name">Turquesa</div>
+                <div class="habilidad-desc">SOLO gráfico: hover, indicadores, separadores. NUNCA texto.</div>
+              </div>
+              <div class="habilidad-item">
+                <div class="habilidad-dot" style="background:var(--color-background); border:1px solid rgba(0,0,0,0.1);"></div>
+                <div class="habilidad-name">Verde muy claro</div>
+                <div class="habilidad-desc">Fondo base predominante, secciones principales</div>
+              </div>
+              <div class="habilidad-item">
+                <div class="habilidad-dot" style="background:var(--color-surface); border:1px solid rgba(0,0,0,0.1);"></div>
+                <div class="habilidad-name">Blanco</div>
+                <div class="habilidad-desc">Tarjetas, campos, contenedores, superficies</div>
+              </div>
+              <div class="habilidad-item">
+                <div class="habilidad-dot" style="background:var(--color-on-surface);"></div>
+                <div class="habilidad-name">Negro</div>
+                <div class="habilidad-desc">Texto principal, navegación, máximo contraste</div>
+              </div>
             </div>
           </div>
         </div>
@@ -840,56 +840,89 @@
     <!-- ESCALA TIPOGRÁFICA -->
     <section class="section" id="typography">
       <div class="section-inner">
-        <h2 class="section-title">Escala tipográfica</h2>
-        <p class="section-subtitle">expresiva + funcional</p>
-        <p style="text-align:center; max-width:700px; margin:0 auto var(--space-5); font-size:17px; line-height:1.7;">
-          Dos familias: <strong>Quimby Mayoral</strong> (expresiva, identidad) y <strong>Acumin Variable Concept</strong> (funcional, lectura).
-        </p>
-        <div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(200px,1fr)); gap:var(--space-3);">
-          <div style="background:var(--color-surface); border-radius:var(--rounded-card); padding:var(--space-3);">
-            <div style="font-weight:700; font-size:12px; color:var(--color-secondary); text-transform:uppercase; letter-spacing:0.05em; margin-bottom:var(--space-1);">display · 64px</div>
-            <div style="font-family:var(--font-expressive); font-size:64px; font-weight:400; line-height:1.1; margin:var(--space-1) 0;">Hola, soy Ceci</div>
-            <div style="font-family:monospace; font-size:11px; opacity:0.5;">typography.display</div>
+        <div class="habilidades-composition">
+          <!-- Columna izquierda: muestras tipográficas -->
+          <div class="habilidades-illustration">
+            <div style="display:flex; flex-direction:column; gap:var(--space-3); width:min(380px, 80vw);">
+              <div style="background:var(--color-surface); border-radius:var(--rounded-card); padding:var(--space-3); transition:transform 0.2s;" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform='none'">
+                <div style="font-family:var(--font-expressive); font-size:64px; font-weight:400; line-height:1.1;">Hola, soy Ceci</div>
+              </div>
+              <div style="background:var(--color-surface); border-radius:var(--rounded-card); padding:var(--space-3); transition:transform 0.2s;" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform='none'">
+                <div style="font-family:var(--font-expressive); font-size:48px; font-weight:400; line-height:1.15;">Proyectos destacados</div>
+              </div>
+              <div style="background:var(--color-surface); border-radius:var(--rounded-card); padding:var(--space-3); transition:transform 0.2s;" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform='none'">
+                <div style="font-family:var(--font-expressive); font-size:40px; font-weight:400; line-height:1.2;">Investigación y diseño</div>
+              </div>
+              <div style="background:var(--color-surface); border-radius:var(--rounded-card); padding:var(--space-3); transition:transform 0.2s;" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform='none'">
+                <div style="font-family:var(--font-functional); font-size:24px; font-weight:700; line-height:1.25;">Subtítulo de sección</div>
+              </div>
+              <div style="background:var(--color-surface); border-radius:var(--rounded-card); padding:var(--space-3); transition:transform 0.2s;" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform='none'">
+                <div style="font-family:var(--font-functional); font-size:16px; font-weight:400; line-height:1.5;">El diseño es una herramienta para investigar, experimentar y resolver problemas.</div>
+              </div>
+              <div style="background:var(--color-surface); border-radius:var(--rounded-card); padding:var(--space-3); transition:transform 0.2s;" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform='none'">
+                <div style="font-family:var(--font-functional); font-size:14px; font-weight:400; line-height:1.4;">2026 · Diseño digital · Prototipado</div>
+              </div>
+              <div style="background:var(--color-surface); border-radius:var(--rounded-card); padding:var(--space-3); transition:transform 0.2s;" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform='none'">
+                <div style="font-family:var(--font-functional); font-size:16px; font-weight:700; line-height:1;">Botón</div>
+              </div>
+              <div style="background:var(--color-surface); border-radius:var(--rounded-card); padding:var(--space-3); transition:transform 0.2s;" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform='none'">
+                <div style="font-family:var(--font-functional); font-size:16px; font-weight:700; line-height:1; color:var(--color-secondary);">Enlace</div>
+              </div>
+            </div>
           </div>
-          <div style="background:var(--color-surface); border-radius:var(--rounded-card); padding:var(--space-3);">
-            <div style="font-weight:700; font-size:12px; color:var(--color-secondary); text-transform:uppercase; letter-spacing:0.05em; margin-bottom:var(--space-1);">h1 · 48px</div>
-            <div style="font-family:var(--font-expressive); font-size:48px; font-weight:400; line-height:1.15; margin:var(--space-1) 0;">Proyectos destacados</div>
-            <div style="font-family:monospace; font-size:11px; opacity:0.5;">typography.h1</div>
-          </div>
-          <div style="background:var(--color-surface); border-radius:var(--rounded-card); padding:var(--space-3);">
-            <div style="font-weight:700; font-size:12px; color:var(--color-secondary); text-transform:uppercase; letter-spacing:0.05em; margin-bottom:var(--space-1);">h2 · 40px</div>
-            <div style="font-family:var(--font-expressive); font-size:40px; font-weight:400; line-height:1.2; margin:var(--space-1) 0;">Investigación y diseño</div>
-            <div style="font-family:monospace; font-size:11px; opacity:0.5;">typography.h2</div>
-          </div>
-          <div style="background:var(--color-surface); border-radius:var(--rounded-card); padding:var(--space-3);">
-            <div style="font-weight:700; font-size:12px; color:var(--color-secondary); text-transform:uppercase; letter-spacing:0.05em; margin-bottom:var(--space-1);">subtitle · 24px</div>
-            <div style="font-family:var(--font-functional); font-size:24px; font-weight:700; line-height:1.25; margin:var(--space-1) 0;">Subtítulo de sección</div>
-            <div style="font-family:monospace; font-size:11px; opacity:0.5;">typography.subtitle</div>
-          </div>
-          <div style="background:var(--color-surface); border-radius:var(--rounded-card); padding:var(--space-3);">
-            <div style="font-weight:700; font-size:12px; color:var(--color-secondary); text-transform:uppercase; letter-spacing:0.05em; margin-bottom:var(--space-1);">body · 16px</div>
-            <div style="font-family:var(--font-functional); font-size:16px; font-weight:400; line-height:1.5; margin:var(--space-1) 0;">El diseño es una herramienta para investigar, experimentar y resolver problemas.</div>
-            <div style="font-family:monospace; font-size:11px; opacity:0.5;">typography.body</div>
-          </div>
-          <div style="background:var(--color-surface); border-radius:var(--rounded-card); padding:var(--space-3);">
-            <div style="font-weight:700; font-size:12px; color:var(--color-secondary); text-transform:uppercase; letter-spacing:0.05em; margin-bottom:var(--space-1);">small · 14px</div>
-            <div style="font-family:var(--font-functional); font-size:14px; font-weight:400; line-height:1.4; margin:var(--space-1) 0;">2026 · Diseño digital · Prototipado</div>
-            <div style="font-family:monospace; font-size:11px; opacity:0.5;">typography.small</div>
-          </div>
-          <div style="background:var(--color-surface); border-radius:var(--rounded-card); padding:var(--space-3);">
-            <div style="font-weight:700; font-size:12px; color:var(--color-secondary); text-transform:uppercase; letter-spacing:0.05em; margin-bottom:var(--space-1);">buttonLabel · 16px</div>
-            <div style="font-family:var(--font-functional); font-size:16px; font-weight:700; line-height:1; margin:var(--space-1) 0;">Botón</div>
-            <div style="font-family:monospace; font-size:11px; opacity:0.5;">typography.buttonLabel</div>
-          </div>
-          <div style="background:var(--color-surface); border-radius:var(--rounded-card); padding:var(--space-3);">
-            <div style="font-weight:700; font-size:12px; color:var(--color-secondary); text-transform:uppercase; letter-spacing:0.05em; margin-bottom:var(--space-1);">link · 16px</div>
-            <div style="font-family:var(--font-functional); font-size:16px; font-weight:700; line-height:1; color:var(--color-secondary); margin:var(--space-1) 0;">Enlace</div>
-            <div style="font-family:monospace; font-size:11px; opacity:0.5;">typography.link</div>
+          <!-- Columna derecha: descripciones y reglas -->
+          <div class="habilidades-content">
+            <div class="habilidades-header">
+              <h2 class="habilidades-title">Escala tipográfica</h2>
+              <p class="habilidades-subtitle">expresiva + funcional</p>
+            </div>
+            <p class="habilidades-description">
+              Dos familias: <strong>Quimby Mayoral</strong> (expresiva, identidad) y <strong>Acumin Variable Concept</strong> (funcional, lectura).
+            </p>
+            <div class="habilidades-list">
+              <div class="habilidad-item">
+                <div class="habilidad-dot" style="background:var(--color-primary);"></div>
+                <div class="habilidad-name">display · 64px</div>
+                <div class="habilidad-desc">Quimby Mayoral. Títulos hero, saludos impactantes.</div>
+              </div>
+              <div class="habilidad-item">
+                <div class="habilidad-dot" style="background:var(--color-primary);"></div>
+                <div class="habilidad-name">h1 · 48px</div>
+                <div class="habilidad-desc">Quimby Mayoral. Títulos principales de sección.</div>
+              </div>
+              <div class="habilidad-item">
+                <div class="habilidad-dot" style="background:var(--color-primary);"></div>
+                <div class="habilidad-name">h2 · 40px</div>
+                <div class="habilidad-desc">Quimby Mayoral. Subtítulos de trabajo, encabezados.</div>
+              </div>
+              <div class="habilidad-item">
+                <div class="habilidad-dot" style="background:var(--color-secondary);"></div>
+                <div class="habilidad-name">subtitle · 24px</div>
+                <div class="habilidad-desc">Acumin Bold. Jerarquía secundaria, etiquetas.</div>
+              </div>
+              <div class="habilidad-item">
+                <div class="habilidad-dot" style="background:var(--color-secondary);"></div>
+                <div class="habilidad-name">body · 16px</div>
+                <div class="habilidad-desc">Acumin Regular. Texto de párrafos, descripciones.</div>
+              </div>
+              <div class="habilidad-item">
+                <div class="habilidad-dot" style="background:var(--color-secondary);"></div>
+                <div class="habilidad-name">small · 14px</div>
+                <div class="habilidad-desc">Acumin Regular. Etiquetas, metadatos, notas.</div>
+              </div>
+              <div class="habilidad-item">
+                <div class="habilidad-dot" style="background:var(--color-secondary);"></div>
+                <div class="habilidad-name">buttonLabel · 16px</div>
+                <div class="habilidad-desc">Acumin Bold. Botones, CTA, acciones.</div>
+              </div>
+              <div class="habilidad-item">
+                <div class="habilidad-dot" style="background:var(--color-secondary);"></div>
+                <div class="habilidad-name">link · 16px</div>
+                <div class="habilidad-desc">Acumin Bold. Enlaces interactivos.</div>
+              </div>
+            </div>
           </div>
         </div>
-        <p style="text-align:center; font-size:14px; opacity:0.6; margin-top:var(--space-3);">
-          Jerarquía por tamaño, peso, estilo y color — nunca opacidad. Cuerpo nunca baja de 16px. Quimby solo en títulos e identidad.
-        </p>
       </div>
     </section>
 
@@ -898,20 +931,51 @@
     <!-- ESPACIADO -->
     <section class="section" id="spacing">
       <div class="section-inner">
-        <h2 class="section-title">Escala de espaciado</h2>
-        <p class="section-subtitle">base de 8px</p>
+        <div class="sobremi-title" style="color:var(--color-on-surface); margin-bottom:var(--space-6);">Escala de espaciado</div>
         <p style="text-align:center; max-width:700px; margin:0 auto var(--space-5); font-size:17px; line-height:1.7;">
           Valores: 8 · 16 · 24 · 32 · 48 · 64 · 80 · 96px. Elementos internos: 12–24px. Secciones: 64–96px.
         </p>
-        <div style="display:flex; flex-wrap:wrap; gap:var(--space-2); align-items:flex-end; justify-content:center;">
-          <div style="display:flex; flex-direction:column; align-items:center; gap:8px;"><div style="width:8px; height:8px; background:var(--color-primary); border-radius:4px;"></div><div style="font-family:monospace; font-size:12px;">8px</div></div>
-          <div style="display:flex; flex-direction:column; align-items:center; gap:8px;"><div style="width:16px; height:16px; background:var(--color-primary); border-radius:4px;"></div><div style="font-family:monospace; font-size:12px;">16px</div></div>
-          <div style="display:flex; flex-direction:column; align-items:center; gap:8px;"><div style="width:24px; height:24px; background:var(--color-primary); border-radius:4px;"></div><div style="font-family:monospace; font-size:12px;">24px</div></div>
-          <div style="display:flex; flex-direction:column; align-items:center; gap:8px;"><div style="width:32px; height:32px; background:var(--color-primary); border-radius:4px;"></div><div style="font-family:monospace; font-size:12px;">32px</div></div>
-          <div style="display:flex; flex-direction:column; align-items:center; gap:8px;"><div style="width:48px; height:48px; background:var(--color-primary); border-radius:4px;"></div><div style="font-family:monospace; font-size:12px;">48px</div></div>
-          <div style="display:flex; flex-direction:column; align-items:center; gap:8px;"><div style="width:64px; height:64px; background:var(--color-primary); border-radius:4px;"></div><div style="font-family:monospace; font-size:12px;">64px</div></div>
-          <div style="display:flex; flex-direction:column; align-items:center; gap:8px;"><div style="width:80px; height:80px; background:var(--color-primary); border-radius:4px;"></div><div style="font-family:monospace; font-size:12px;">80px</div></div>
-          <div style="display:flex; flex-direction:column; align-items:center; gap:8px;"><div style="width:96px; height:96px; background:var(--color-primary); border-radius:4px;"></div><div style="font-family:monospace; font-size:12px;">96px</div></div>
+        <div style="max-width:540px; margin:0 auto var(--space-6); display:flex; flex-direction:column; align-items:center; gap:var(--space-2);">
+          <div style="display:flex; align-items:center; gap:var(--space-3); width:100%; justify-content:center;">
+            <div style="width:8px; height:8px; background:var(--color-primary); border-radius:4px; flex-shrink:0;"></div>
+            <div style="height:8px; flex:1; background:var(--color-primary); border-radius:4px; max-width:120px;"></div>
+            <div style="font-family:monospace; font-size:13px; min-width:50px; text-align:right;">8px</div>
+          </div>
+          <div style="display:flex; align-items:center; gap:var(--space-3); width:100%; justify-content:center;">
+            <div style="width:16px; height:16px; background:var(--color-primary); border-radius:4px; flex-shrink:0;"></div>
+            <div style="height:16px; flex:1; background:var(--color-primary); border-radius:4px; max-width:180px;"></div>
+            <div style="font-family:monospace; font-size:13px; min-width:50px; text-align:right;">16px</div>
+          </div>
+          <div style="display:flex; align-items:center; gap:var(--space-3); width:100%; justify-content:center;">
+            <div style="width:24px; height:24px; background:var(--color-primary); border-radius:4px; flex-shrink:0;"></div>
+            <div style="height:24px; flex:1; background:var(--color-primary); border-radius:4px; max-width:250px;"></div>
+            <div style="font-family:monospace; font-size:13px; min-width:50px; text-align:right;">24px</div>
+          </div>
+          <div style="display:flex; align-items:center; gap:var(--space-3); width:100%; justify-content:center;">
+            <div style="width:32px; height:32px; background:var(--color-primary); border-radius:4px; flex-shrink:0;"></div>
+            <div style="height:32px; flex:1; background:var(--color-primary); border-radius:4px; max-width:320px;"></div>
+            <div style="font-family:monospace; font-size:13px; min-width:50px; text-align:right;">32px</div>
+          </div>
+          <div style="display:flex; align-items:center; gap:var(--space-3); width:100%; justify-content:center;">
+            <div style="width:48px; height:48px; background:var(--color-primary); border-radius:4px; flex-shrink:0;"></div>
+            <div style="height:48px; flex:1; background:var(--color-primary); border-radius:4px; max-width:380px;"></div>
+            <div style="font-family:monospace; font-size:13px; min-width:50px; text-align:right;">48px</div>
+          </div>
+          <div style="display:flex; align-items:center; gap:var(--space-3); width:100%; justify-content:center;">
+            <div style="width:64px; height:64px; background:var(--color-primary); border-radius:4px; flex-shrink:0;"></div>
+            <div style="height:64px; flex:1; background:var(--color-primary); border-radius:4px; max-width:440px;"></div>
+            <div style="font-family:monospace; font-size:13px; min-width:50px; text-align:right;">64px</div>
+          </div>
+          <div style="display:flex; align-items:center; gap:var(--space-3); width:100%; justify-content:center;">
+            <div style="width:80px; height:80px; background:var(--color-primary); border-radius:4px; flex-shrink:0;"></div>
+            <div style="height:80px; flex:1; background:var(--color-primary); border-radius:4px; max-width:500px;"></div>
+            <div style="font-family:monospace; font-size:13px; min-width:50px; text-align:right;">80px</div>
+          </div>
+          <div style="display:flex; align-items:center; gap:var(--space-3); width:100%; justify-content:center;">
+            <div style="width:96px; height:96px; background:var(--color-primary); border-radius:4px; flex-shrink:0;"></div>
+            <div style="height:96px; flex:1; background:var(--color-primary); border-radius:4px; max-width:560px;"></div>
+            <div style="font-family:monospace; font-size:13px; min-width:50px; text-align:right;">96px</div>
+          </div>
         </div>
       </div>
     </section>
@@ -936,33 +1000,48 @@
     <!-- COMPONENTES -->
     <section class="section" id="components">
       <div class="section-inner">
-        <h2 class="section-title">Componentes</h2>
-        <p class="section-subtitle">tokens en acción</p>
+        <div class="software-header">
+          <h2 class="software-title">Componentes</h2>
+          <p class="software-subtitle">tokens en acción</p>
+        </div>
 
-        <!-- Botones -->
-        <div style="margin-bottom:var(--space-5);">
-          <h3 style="font-family:var(--font-expressive); font-size:24px; font-weight:400; margin-bottom:var(--space-2);">Botones y CTA</h3>
-          <div style="background:var(--color-surface); border-radius:var(--rounded-card); padding:var(--space-3); margin-bottom:var(--space-2);">
-            <div style="font-weight:700; font-size:14px; margin-bottom:var(--space-2);">buttonPrimary</div>
-            <button style="background:var(--color-primary); color:var(--color-surface); height:44px; padding:0 var(--space-3); border-radius:var(--rounded-button); font-family:var(--font-functional); font-size:16px; font-weight:700; cursor:pointer; border:none; transition:transform 0.15s, box-shadow 0.15s;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.1)'" onmouseout="this.style.transform='none'; this.style.boxShadow='none'">CTA Principal</button>
-            <div style="margin-top:var(--space-1); font-size:12px; opacity:0.5;">Fondo: #B82925 | Texto: #FFFFFF | 44px alto | Radio 16px</div>
-          </div>
-          <div style="background:var(--color-surface); border-radius:var(--rounded-card); padding:var(--space-3); margin-bottom:var(--space-2);">
-            <div style="font-weight:700; font-size:14px; margin-bottom:var(--space-2);">buttonSecondary</div>
-            <button style="background:var(--color-surface); color:var(--color-primary); height:44px; padding:0 var(--space-3); border-radius:var(--rounded-button); font-family:var(--font-functional); font-size:16px; font-weight:700; cursor:pointer; border:2px solid var(--color-primary); transition:transform 0.15s;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='none'">Secundario (rojo)</button>
-            <div style="margin-top:var(--space-1); font-size:12px; opacity:0.5;">Fondo: #FFFFFF | Texto: #B82925 | Borde rojo | 44px alto</div>
-          </div>
-          <div style="background:var(--color-surface); border-radius:var(--rounded-card); padding:var(--space-3);">
-            <div style="font-weight:700; font-size:14px; margin-bottom:var(--space-2);">buttonSecondaryAlt</div>
-            <button style="background:var(--color-surface); color:var(--color-secondary); height:44px; padding:0 var(--space-3); border-radius:var(--rounded-button); font-family:var(--font-functional); font-size:16px; font-weight:700; cursor:pointer; border:2px solid var(--color-secondary); transition:transform 0.15s;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='none'">Secundario (azul)</button>
-            <div style="margin-top:var(--space-1); font-size:12px; opacity:0.5;">Fondo: #FFFFFF | Texto: #3D5A8A | Borde azul | 44px alto</div>
+        <div style="margin-bottom:var(--space-6);">
+          <h3 style="font-family:var(--font-expressive); font-size:clamp(32px,5vw,48px); font-weight:400; margin-bottom:var(--space-4); color:var(--color-on-surface);">Botones y CTA</h3>
+          <div class="software-grid">
+            <div class="software-card">
+              <div class="software-icon" style="background:var(--color-primary);">
+                <button style="background:var(--color-primary); color:var(--color-surface); height:44px; padding:0 var(--space-3); border-radius:var(--rounded-button); font-family:var(--font-functional); font-size:16px; font-weight:700; cursor:pointer; border:none; transition:transform 0.15s, box-shadow 0.15s; width:100%;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.1)'" onmouseout="this.style.transform='none'; this.style.boxShadow='none'">CTA Principal</button>
+              </div>
+              <div class="software-name">buttonPrimary</div>
+              <div style="font-size:12px; opacity:0.5; text-align:center;">#B82925 | #FFF | 44px | Radio 16px</div>
+            </div>
+            <div class="software-card">
+              <div class="software-icon" style="background:var(--color-secondary);">
+                <button style="background:var(--color-secondary); color:var(--color-surface); height:44px; padding:0 var(--space-3); border-radius:var(--rounded-button); font-family:var(--font-functional); font-size:16px; font-weight:700; cursor:pointer; border:none; transition:transform 0.15s; width:100%;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='none'">Secundario</button>
+              </div>
+              <div class="software-name">buttonSecondary</div>
+              <div style="font-size:12px; opacity:0.5; text-align:center;">#3D5A8A | #FFF | 44px | Radio 16px</div>
+            </div>
+            <div class="software-card">
+              <div class="software-icon" style="background:var(--color-surface); border:1px solid var(--color-primary);">
+                <button style="background:var(--color-surface); color:var(--color-primary); height:44px; padding:0 var(--space-3); border-radius:var(--rounded-button); font-family:var(--font-functional); font-size:16px; font-weight:700; cursor:pointer; border:2px solid var(--color-primary); transition:transform 0.15s; width:100%;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='none'">Borde rojo</button>
+              </div>
+              <div class="software-name">buttonOutline</div>
+              <div style="font-size:12px; opacity:0.5; text-align:center;">#FFF | #B82925 | Borde rojo</div>
+            </div>
+            <div class="software-card">
+              <div class="software-icon" style="background:var(--color-surface); border:1px solid var(--color-secondary);">
+                <button style="background:var(--color-surface); color:var(--color-secondary); height:44px; padding:0 var(--space-3); border-radius:var(--rounded-button); font-family:var(--font-functional); font-size:16px; font-weight:700; cursor:pointer; border:2px solid var(--color-secondary); transition:transform 0.15s; width:100%;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='none'">Borde azul</button>
+              </div>
+              <div class="software-name">buttonOutlineAlt</div>
+              <div style="font-size:12px; opacity:0.5; text-align:center;">#FFF | #3D5A8A | Borde azul</div>
+            </div>
           </div>
         </div>
 
-        <!-- Navegación -->
-        <div style="margin-bottom:var(--space-5);">
-          <h3 style="font-family:var(--font-expressive); font-size:24px; font-weight:400; margin-bottom:var(--space-2);">Navegación</h3>
-          <div style="background:var(--color-primary); padding:var(--space-2) var(--space-3); border-radius:var(--rounded-card); display:flex; gap:var(--space-2); flex-wrap:wrap;">
+        <div style="margin-bottom:var(--space-6);">
+          <h3 style="font-family:var(--font-expressive); font-size:clamp(32px,5vw,48px); font-weight:400; margin-bottom:var(--space-4); color:var(--color-on-surface);">Navegación</h3>
+          <div style="background:var(--color-primary); padding:var(--space-2) var(--space-3); border-radius:var(--rounded-card); display:flex; gap:var(--space-2); flex-wrap:wrap; max-width:600px; margin:0 auto;">
             <a href="#" style="font-family:var(--font-functional); font-size:16px; font-weight:700; padding:var(--space-1) var(--space-2); color:var(--color-surface); text-decoration:underline; text-underline-offset:3px;">Inicio</a>
             <a href="#" style="font-family:var(--font-functional); font-size:16px; font-weight:400; padding:var(--space-1) var(--space-2); color:var(--color-surface); border-radius:var(--rounded-button); transition:background 0.15s;" onmouseover="this.style.background='rgba(255,255,255,0.15)'" onmouseout="this.style.background='transparent'">Sobre mí</a>
             <a href="#" style="font-family:var(--font-functional); font-size:16px; font-weight:400; padding:var(--space-1) var(--space-2); color:var(--color-surface); border-radius:var(--rounded-button); transition:background 0.15s;" onmouseover="this.style.background='rgba(255,255,255,0.15)'" onmouseout="this.style.background='transparent'">Habilidades</a>
@@ -971,36 +1050,50 @@
           </div>
         </div>
 
-        <!-- Chips -->
-        <div style="margin-bottom:var(--space-5);">
-          <h3 style="font-family:var(--font-expressive); font-size:24px; font-weight:400; margin-bottom:var(--space-2);">Chips / Etiquetas</h3>
-          <div style="display:flex; flex-wrap:wrap; gap:var(--space-1);">
-            <span style="display:inline-flex; align-items:center; height:32px; padding:0 12px; background:var(--color-background); color:var(--color-on-surface); border-radius:var(--rounded-pill); font-size:14px;">UX/UI</span>
-            <span style="display:inline-flex; align-items:center; height:32px; padding:0 12px; background:var(--color-secondary); color:var(--color-surface); border-radius:var(--rounded-pill); font-size:14px;">Diseño digital</span>
-            <span style="display:inline-flex; align-items:center; height:32px; padding:0 12px; background:var(--color-accent); color:var(--color-surface); border-radius:var(--rounded-pill); font-size:14px;">Prototipado</span>
+        <div style="margin-bottom:var(--space-6);">
+          <h3 style="font-family:var(--font-expressive); font-size:clamp(32px,5vw,48px); font-weight:400; margin-bottom:var(--space-4); color:var(--color-on-surface);">Chips / Etiquetas</h3>
+          <div class="software-grid">
+            <div class="software-card">
+              <div class="software-icon" style="background:var(--color-background);">
+                <span style="display:inline-flex; align-items:center; height:32px; padding:0 12px; background:var(--color-background); color:var(--color-on-surface); border-radius:var(--rounded-pill); font-size:14px; white-space:nowrap;">UX/UI</span>
+              </div>
+              <div class="software-name">chipDefault</div>
+              <div style="font-size:12px; opacity:0.5; text-align:center;">Fondo: #E7ECE8</div>
+            </div>
+            <div class="software-card">
+              <div class="software-icon" style="background:var(--color-secondary);">
+                <span style="display:inline-flex; align-items:center; height:32px; padding:0 12px; background:var(--color-secondary); color:var(--color-surface); border-radius:var(--rounded-pill); font-size:14px; white-space:nowrap;">Diseño digital</span>
+              </div>
+              <div class="software-name">chipSecondary</div>
+              <div style="font-size:12px; opacity:0.5; text-align:center;">Fondo: #3D5A8A</div>
+            </div>
+            <div class="software-card">
+              <div class="software-icon" style="background:var(--color-accent);">
+                <span style="display:inline-flex; align-items:center; height:32px; padding:0 12px; background:var(--color-accent); color:var(--color-surface); border-radius:var(--rounded-pill); font-size:14px; white-space:nowrap;">Prototipado</span>
+              </div>
+              <div class="software-name">chipAccent</div>
+              <div style="font-size:12px; opacity:0.5; text-align:center;">Fondo: #00A79D</div>
+            </div>
           </div>
         </div>
 
-        <!-- Separador -->
-        <div style="margin-bottom:var(--space-5);">
-          <h3 style="font-family:var(--font-expressive); font-size:24px; font-weight:400; margin-bottom:var(--space-2);">Separador</h3>
+        <div style="margin-bottom:var(--space-6);">
+          <h3 style="font-family:var(--font-expressive); font-size:clamp(32px,5vw,48px); font-weight:400; margin-bottom:var(--space-4); color:var(--color-on-surface);">Separador</h3>
           <div style="height:2px; background:linear-gradient(90deg, transparent 0%, var(--color-accent) 50%, transparent 100%); max-width:800px; margin:var(--space-4) 0;"></div>
           <div style="font-size:12px; opacity:0.5;">Color: #00A79D. Uso: únicamente para marcar cambios importantes.</div>
         </div>
 
-        <!-- Footer demo -->
-        <div style="margin-bottom:var(--space-5);">
-          <h3 style="font-family:var(--font-expressive); font-size:24px; font-weight:400; margin-bottom:var(--space-2);">Footer</h3>
-          <div style="background:var(--color-on-surface); color:var(--color-surface); padding:var(--space-4) var(--space-3); text-align:center; border-radius:var(--rounded-card);">
+        <div style="margin-bottom:var(--space-6);">
+          <h3 style="font-family:var(--font-expressive); font-size:clamp(32px,5vw,48px); font-weight:400; margin-bottom:var(--space-4); color:var(--color-on-surface);">Footer</h3>
+          <div style="background:var(--color-on-surface); color:var(--color-surface); padding:var(--space-4) var(--space-3); text-align:center; border-radius:var(--rounded-card); max-width:540px; margin:0 auto;">
             <p style="font-family:var(--font-expressive); font-size:24px;">Hecho con el corazón</p>
           </div>
         </div>
 
-        <!-- Progreso -->
         <div>
-          <h3 style="font-family:var(--font-expressive); font-size:24px; font-weight:400; margin-bottom:var(--space-2);">Indicador de progreso</h3>
-          <div style="height:3px; background:var(--color-primary); width:30%; border-radius:2px;"></div>
-          <div style="font-size:12px; opacity:0.5; margin-top:var(--space-1);">Color: #B82925. Posición: barra superior. Avance conforme scroll.</div>
+          <h3 style="font-family:var(--font-expressive); font-size:clamp(32px,5vw,48px); font-weight:400; margin-bottom:var(--space-4); color:var(--color-on-surface);">Indicador de progreso</h3>
+          <div style="height:3px; background:var(--color-primary); width:30%; border-radius:2px; max-width:540px; margin:0 auto;"></div>
+          <div style="font-size:12px; opacity:0.5; margin-top:var(--space-1); text-align:center;">Color: #B82925. Posición: barra superior. Avance conforme scroll.</div>
         </div>
       </div>
     </section>
@@ -1010,29 +1103,64 @@
     <!-- REGLAS -->
     <section class="section" id="rules">
       <div class="section-inner">
-        <h2 class="section-title">Reglas: lo que sí y lo que no</h2>
-        <div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:var(--space-4); margin-top:var(--space-4);">
-          <div>
-            <h3 style="font-family:var(--font-expressive); font-size:24px; font-weight:400; margin-bottom:var(--space-2);">Lo que sí se permite</h3>
-            <ul style="list-style:none;">
-              <li style="padding:var(--space-1) 0; display:flex; align-items:flex-start; gap:var(--space-1); font-size:14px; line-height:1.5;"><span style="flex:0 0 20px; width:20px; height:20px; border-radius:50%; display:inline-flex; align-items:center; justify-content:center; font-size:11px; font-weight:700; background:var(--color-primary); color:var(--color-surface);">✓</span>Rojo como color principal de acento y CTA.</li>
-              <li style="padding:var(--space-1) 0; display:flex; align-items:flex-start; gap:var(--space-1); font-size:14px; line-height:1.5;"><span style="flex:0 0 20px; width:20px; height:20px; border-radius:50%; display:inline-flex; align-items:center; justify-content:center; font-size:11px; font-weight:700; background:var(--color-primary); color:var(--color-surface);">✓</span>Azul como color secundario para información y acciones complementarias.</li>
-              <li style="padding:var(--space-1) 0; display:flex; align-items:flex-start; gap:var(--space-1); font-size:14px; line-height:1.5;"><span style="flex:0 0 20px; width:20px; height:20px; border-radius:50%; display:inline-flex; align-items:center; justify-content:center; font-size:11px; font-weight:700; background:var(--color-primary); color:var(--color-surface);">✓</span>Negro y blanco como base visual y máximo contraste.</li>
-              <li style="padding:var(--space-1) 0; display:flex; align-items:flex-start; gap:var(--space-1); font-size:14px; line-height:1.5;"><span style="flex:0 0 20px; width:20px; height:20px; border-radius:50%; display:inline-flex; align-items:center; justify-content:center; font-size:11px; font-weight:700; background:var(--color-primary); color:var(--color-surface);">✓</span>Priorizar la presentación visual de los proyectos.</li>
-              <li style="padding:var(--space-1) 0; display:flex; align-items:flex-start; gap:var(--space-1); font-size:14px; line-height:1.5;"><span style="flex:0 0 20px; width:20px; height:20px; border-radius:50%; display:inline-flex; align-items:center; justify-content:center; font-size:11px; font-weight:700; background:var(--color-primary); color:var(--color-surface);">✓</span>Composiciones asimétricas y suficiente espacio en blanco.</li>
-              <li style="padding:var(--space-1) 0; display:flex; align-items:flex-start; gap:var(--space-1); font-size:14px; line-height:1.5;"><span style="flex:0 0 20px; width:20px; height:20px; border-radius:50%; display:inline-flex; align-items:center; justify-content:center; font-size:11px; font-weight:700; background:var(--color-primary); color:var(--color-surface);">✓</span>Permitir superposiciones y desplazamientos gráficos que no afecten la lectura.</li>
-            </ul>
+        <div class="habilidades-composition">
+          <!-- Columna izquierda: Lo que sí se permite -->
+          <div class="habilidades-illustration">
+            <div style="display:flex; flex-direction:column; gap:var(--space-2); width:min(380px, 80vw);">
+              <div style="background:var(--color-surface); border-radius:var(--rounded-card); padding:var(--space-3); transition:transform 0.2s;" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform='none'">
+                <div style="font-family:var(--font-expressive); font-size:24px; font-weight:400; margin-bottom:var(--space-2); color:var(--color-primary);">✓ Lo que sí se permite</div>
+                <ul style="list-style:none;">
+                  <li style="padding:var(--space-1) 0; display:flex; align-items:flex-start; gap:var(--space-1); font-size:14px; line-height:1.5;"><span style="flex:0 0 20px; width:20px; height:20px; border-radius:50%; display:inline-flex; align-items:center; justify-content:center; font-size:11px; font-weight:700; background:var(--color-primary); color:var(--color-surface);">✓</span>Rojo como color principal de acento y CTA.</li>
+                  <li style="padding:var(--space-1) 0; display:flex; align-items:flex-start; gap:var(--space-1); font-size:14px; line-height:1.5;"><span style="flex:0 0 20px; width:20px; height:20px; border-radius:50%; display:inline-flex; align-items:center; justify-content:center; font-size:11px; font-weight:700; background:var(--color-primary); color:var(--color-surface);">✓</span>Azul como color secundario para información y acciones complementarias.</li>
+                  <li style="padding:var(--space-1) 0; display:flex; align-items:flex-start; gap:var(--space-1); font-size:14px; line-height:1.5;"><span style="flex:0 0 20px; width:20px; height:20px; border-radius:50%; display:inline-flex; align-items:center; justify-content:center; font-size:11px; font-weight:700; background:var(--color-primary); color:var(--color-surface);">✓</span>Negro y blanco como base visual y máximo contraste.</li>
+                  <li style="padding:var(--space-1) 0; display:flex; align-items:flex-start; gap:var(--space-1); font-size:14px; line-height:1.5;"><span style="flex:0 0 20px; width:20px; height:20px; border-radius:50%; display:inline-flex; align-items:center; justify-content:center; font-size:11px; font-weight:700; background:var(--color-primary); color:var(--color-surface);">✓</span>Priorizar la presentación visual de los proyectos.</li>
+                  <li style="padding:var(--space-1) 0; display:flex; align-items:flex-start; gap:var(--space-1); font-size:14px; line-height:1.5;"><span style="flex:0 0 20px; width:20px; height:20px; border-radius:50%; display:inline-flex; align-items:center; justify-content:center; font-size:11px; font-weight:700; background:var(--color-primary); color:var(--color-surface);">✓</span>Composiciones asimétricas y suficiente espacio en blanco.</li>
+                  <li style="padding:var(--space-1) 0; display:flex; align-items:flex-start; gap:var(--space-1); font-size:14px; line-height:1.5;"><span style="flex:0 0 20px; width:20px; height:20px; border-radius:50%; display:inline-flex; align-items:center; justify-content:center; font-size:11px; font-weight:700; background:var(--color-primary); color:var(--color-surface);">✓</span>Permitir superposiciones y desplazamientos gráficos que no afecten la lectura.</li>
+                </ul>
+              </div>
+            </div>
           </div>
-          <div>
-            <h3 style="font-family:var(--font-expressive); font-size:24px; font-weight:400; margin-bottom:var(--space-2);">Lo que no se permite</h3>
-            <ul style="list-style:none;">
-              <li style="padding:var(--space-1) 0; display:flex; align-items:flex-start; gap:var(--space-1); font-size:14px; line-height:1.5;"><span style="flex:0 0 20px; width:20px; height:20px; border-radius:50%; display:inline-flex; align-items:center; justify-content:center; font-size:11px; font-weight:700; background:var(--color-on-surface); color:var(--color-surface);">✗</span>Colores fuera de la paleta definida.</li>
-              <li style="padding:var(--space-1) 0; display:flex; align-items:flex-start; gap:var(--space-1); font-size:14px; line-height:1.5;"><span style="flex:0 0 20px; width:20px; height:20px; border-radius:50%; display:inline-flex; align-items:center; justify-content:center; font-size:11px; font-weight:700; background:var(--color-on-surface); color:var(--color-surface);">✗</span>Sombras pesadas o animaciones excesivas.</li>
-              <li style="padding:var(--space-1) 0; display:flex; align-items:flex-start; gap:var(--space-1); font-size:14px; line-height:1.5;"><span style="flex:0 0 20px; width:20px; height:20px; border-radius:50%; display:inline-flex; align-items:center; justify-content:center; font-size:11px; font-weight:700; background:var(--color-on-surface); color:var(--color-surface);">✗</span>Tipografías decorativas que dificultan la lectura.</li>
-              <li style="padding:var(--space-1) 0; display:flex; align-items:flex-start; gap:var(--space-1); font-size:14px; line-height:1.5;"><span style="flex:0 0 20px; width:20px; height:20px; border-radius:50%; display:inline-flex; align-items:center; justify-content:center; font-size:11px; font-weight:700; background:var(--color-on-surface); color:var(--color-surface);">✗</span>Sacrificar la legibilidad por la experimentación.</li>
-              <li style="padding:var(--space-1) 0; display:flex; align-items:flex-start; gap:var(--space-1); font-size:14px; line-height:1.5;"><span style="flex:0 0 20px; width:20px; height:20px; border-radius:50%; display:inline-flex; align-items:center; justify-content:center; font-size:11px; font-weight:700; background:var(--color-on-surface); color:var(--color-surface);">✗</span>Convertir todos los elementos en formas redondeadas.</li>
-              <li style="padding:var(--space-1) 0; display:flex; align-items:flex-start; gap:var(--space-1); font-size:14px; line-height:1.5;"><span style="flex:0 0 20px; width:20px; height:20px; border-radius:50%; display:inline-flex; align-items:center; justify-content:center; font-size:11px; font-weight:700; background:var(--color-on-surface); color:var(--color-surface);">✗</span>Utilizar el turquesa como color dominante o como texto.</li>
-            </ul>
+          <!-- Columna derecha: Lo que no se permite -->
+          <div class="habilidades-content">
+            <div class="habilidades-header">
+              <h2 class="habilidades-title">Reglas</h2>
+              <p class="habilidades-subtitle">lo que sí y lo que no</p>
+            </div>
+            <p class="habilidades-description">
+              El diseño se basa en experimentación controlada y composiciones asimétricas. Estas reglas mantienen la identidad visual coherente.
+            </p>
+            <div class="habilidades-list">
+              <div class="habilidad-item">
+                <div class="habilidad-dot" style="background:var(--color-on-surface);"></div>
+                <div class="habilidad-name">✗ Colores fuera de paleta</div>
+                <div class="habilidad-desc">Nunca usar colores no definidos en el sistema de diseño.</div>
+              </div>
+              <div class="habilidad-item">
+                <div class="habilidad-dot" style="background:var(--color-on-surface);"></div>
+                <div class="habilidad-name">✗ Sombras y animaciones</div>
+                <div class="habilidad-desc">Evitar sombras pesadas o animaciones excesivas.</div>
+              </div>
+              <div class="habilidad-item">
+                <div class="habilidad-dot" style="background:var(--color-on-surface);"></div>
+                <div class="habilidad-name">✗ Tipografías decorativas</div>
+                <div class="habilidad-desc">No usar fuentes que dificulten la lectura.</div>
+              </div>
+              <div class="habilidad-item">
+                <div class="habilidad-dot" style="background:var(--color-on-surface);"></div>
+                <div class="habilidad-name">✗ Sacrificar legibilidad</div>
+                <div class="habilidad-desc">La experimentación nunca debe comprometer la lectura.</div>
+              </div>
+              <div class="habilidad-item">
+                <div class="habilidad-dot" style="background:var(--color-on-surface);"></div>
+                <div class="habilidad-name">✗ Todo redondeado</div>
+                <div class="habilidad-desc">No convertir todos los elementos en formas redondeadas.</div>
+              </div>
+              <div class="habilidad-item">
+                <div class="habilidad-dot" style="background:var(--color-on-surface);"></div>
+                <div class="habilidad-name">✗ Turquesa dominante</div>
+                <div class="habilidad-desc">Nunca usar turquesa como color dominante o como texto.</div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
