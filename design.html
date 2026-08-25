@@ -8,323 +8,497 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <style>
+    /* ==========================================
+       FONTS
+       ========================================== */
+    @font-face {
+      font-family: "Quimby Mayoral";
+      src: url("Assets/fonts/QuimbyMayoral/QuimbyMayoral.woff") format("woff");
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: "Acumin Variable Concept";
+      src: url("Assets/fonts/Acumin-font/Acumin Variable Concept.woff2") format("woff2"),
+           url("Assets/fonts/Acumin-font/Acumin Variable Concept.woff") format("woff");
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: "Acumin Pro";
+      src: url("Assets/fonts/Acumin-font/Acumin-RPro.woff") format("woff");
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: "Acumin Pro";
+      src: url("Assets/fonts/Acumin-font/Acumin-BdPro.woff") format("woff");
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    /* ==========================================
+       TOKENS from DESIGN.md
+       ========================================== */
     :root {
-      /* Colors from DESIGN.md */
+      /* Colors */
       --color-primary: #B82925;
       --color-secondary: #3D5A8A;
       --color-accent: #00A79D;
       --color-background: #E7ECE8;
       --color-surface: #FFFFFF;
       --color-on-surface: #000000;
-      --color-secondary-hover: #2F4A72;
       --color-primary-dark: #9A2222;
+
+      /* Typography */
+      --font-expressive: "Quimby Mayoral", "Segoe Script", cursive;
+      --font-functional: "Acumin Variable Concept", "Acumin Pro", system-ui, sans-serif;
+
+      /* Spacing base: 8px */
+      --space-1: 8px;
+      --space-2: 16px;
+      --space-3: 24px;
+      --space-4: 32px;
+      --space-5: 48px;
+      --space-6: 64px;
+      --space-7: 80px;
+      --space-8: 96px;
+
+      /* Rounded */
+      --rounded-card: 16px;
+      --rounded-pill: 9999px;
+      --rounded-button: 16px;
     }
 
-    *,
-    *::before,
-    *::after {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
+    /* ==========================================
+       RESET & BASE
+       ========================================== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
     body {
-      margin: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-family: var(--font-functional);
       font-size: 16px;
-      line-height: 1.6;
+      line-height: 1.5;
       color: var(--color-on-surface);
-      background: var(--color-surface);
+      background: var(--color-background);
+      overflow-x: hidden;
       -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
     }
+    img { max-width: 100%; height: auto; display: block; }
+    a { color: inherit; text-decoration: none; }
+    button { cursor: pointer; border: none; background: none; font: inherit; }
 
-    /* Skip link for accessibility */
+    /* Accessibility */
     .skip-link {
-      position: absolute;
-      left: -999px;
-      top: 0;
-      padding: 16px;
-      background: var(--color-primary);
-      color: var(--color-on-surface);
-      z-index: 100;
+      position: absolute; left: -999px; top: 0; z-index: 100;
+      padding: var(--space-2); background: var(--color-primary); color: var(--color-surface);
     }
-    .skip-link:focus {
-      left: 0;
+    .skip-link:focus { left: 0; }
+    :focus-visible { outline: 3px solid var(--color-primary); outline-offset: 2px; }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      * { animation: none !important; transition: none !important; }
     }
 
-    /* Layout */
+    /* ==========================================
+       LAYOUT
+       ========================================== */
     .container {
       max-width: 1200px;
       margin: 0 auto;
-      padding: 0 24px;
+      padding: 0 var(--space-4);
     }
 
-    /* Typography scale based on DESIGN.md tokens */
-    .type-scale {
-      font-family: "Acumin Variable Concept", system-ui, -apple-system, sans-serif;
+    /* ==========================================
+       HEADER
+       ========================================== */
+    .header {
+      padding: var(--space-8) 0 var(--space-6);
+      border-bottom: 2px solid var(--color-accent);
+      margin-bottom: var(--space-8);
     }
-    .type-scale .display { font-size: 64px; font-weight: 400; line-height: 1.1; }
-    .type-scale .h1 { font-size: 48px; font-weight: 400; line-height: 1.15; }
-    .type-scale .h2 { font-size: 40px; font-weight: 400; line-height: 1.2; }
-    .type-scale .subtitle { font-size: 24px; font-weight: 700; line-height: 1.25; font-family: "Acumin Variable Concept", system-ui, -apple-system, sans-serif; }
-    .type-scale .body { font-size: 16px; font-weight: 400; line-height: 1.5; }
-    .type-scale .small { font-size: 14px; font-weight: 400; line-height: 1.4; }
-    .type-scale .buttonLabel { font-size: 16px; font-weight: 700; line-height: 1; }
+    .header h1 {
+      font-family: var(--font-expressive);
+      font-size: clamp(32px, 5vw, 48px);
+      font-weight: 400;
+      line-height: 1.1;
+      color: var(--color-primary);
+      margin-bottom: var(--space-1);
+    }
+    .header p {
+      font-family: var(--font-functional);
+      font-size: 16px;
+      color: var(--color-secondary);
+      font-weight: 600;
+    }
 
-    /* Colors grid */
+    /* ==========================================
+       SECTIONS
+       ========================================== */
+    .section {
+      margin-bottom: var(--space-8);
+    }
+    .section-title {
+      font-family: var(--font-expressive);
+      font-size: clamp(28px, 4vw, 40px);
+      font-weight: 400;
+      line-height: 1.2;
+      color: var(--color-on-surface);
+      margin-bottom: var(--space-2);
+    }
+    .section-desc {
+      font-family: var(--font-functional);
+      font-size: 16px;
+      color: var(--color-secondary);
+      margin-bottom: var(--space-4);
+      max-width: 700px;
+    }
+    .section-note {
+      font-family: var(--font-functional);
+      font-size: 14px;
+      color: var(--color-on-surface);
+      opacity: 0.6;
+      margin-top: var(--space-3);
+    }
+
+    /* ==========================================
+       COLOR GRID
+       ========================================== */
     .color-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 16px;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: var(--space-3);
     }
     .color-card {
-      border: 1px solid #e0e0e0;
-      border-radius: 8px;
-      padding: 16px;
-      text-align: left;
-      cursor: pointer;
-      transition: box-shadow 0.2s;
+      background: var(--color-surface);
+      border-radius: var(--rounded-card);
+      overflow: hidden;
+      transition: transform 0.2s ease;
     }
     .color-card:hover {
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      transform: translateY(-4px);
     }
     .color-swatch {
       width: 100%;
-      height: 100px;
-      background: var(--color-primary);
-      margin-bottom: 8px;
-      display: flex;
-      align-items: flex-end;
-      padding-bottom: 8px;
-      border-radius: 4px;
+      height: 120px;
+    }
+    .color-info {
+      padding: var(--space-2);
     }
     .color-name {
-      font-weight: 600;
+      font-family: var(--font-functional);
+      font-weight: 700;
       font-size: 14px;
       margin-bottom: 4px;
     }
     .color-hex {
       font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, monospace;
       font-size: 12px;
-      opacity: 0.8;
-      word-break: break-all;
+      opacity: 0.7;
     }
     .color-usage {
+      font-family: var(--font-functional);
       font-size: 12px;
-      color: #666;
-      margin-top: 4px;
+      color: var(--color-on-surface);
+      opacity: 0.6;
+      margin-top: 8px;
+      line-height: 1.4;
     }
 
-    /* Typography showcase */
+    /* ==========================================
+       TYPOGRAPHY SHOWCASE
+       ========================================== */
     .typography-showcase {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-      gap: 16px;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: var(--space-3);
     }
     .type-spec {
-      border: 1px solid #e0e0e0;
-      border-radius: 8px;
-      padding: 16px;
-      text-align: center;
+      background: var(--color-surface);
+      border-radius: var(--rounded-card);
+      padding: var(--space-3);
+      text-align: left;
     }
-    .type-spec .name {
-      font-weight: 600;
-      font-size: 13px;
-      margin-bottom: 4px;
+    .type-spec .label {
+      font-family: var(--font-functional);
+      font-weight: 700;
+      font-size: 12px;
+      color: var(--color-secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: var(--space-1);
     }
     .type-spec .sample {
-      font-size: 18px;
-      margin: 8px 0;
-      min-height: 24px;
+      margin: var(--space-1) 0;
+      color: var(--color-on-surface);
     }
     .type-spec .token {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, monospace;
       font-size: 11px;
-      color: #666;
-      word-break: break-all;
+      color: var(--color-on-surface);
+      opacity: 0.5;
     }
 
-    /* Spacing scale */
+    /* ==========================================
+       SPACING SCALE
+       ========================================== */
     .spacing-scale {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
-      gap: 8px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-2);
+      align-items: flex-end;
     }
     .spacing-item {
-      border: 1px solid #e0e0e0;
-      border-radius: 4px;
-      padding: 12px;
-      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
     }
     .spacing-bar {
-      height: 20px;
-      background: #e0e0e0;
+      background: var(--color-primary);
       border-radius: 4px;
-      margin-top: 8px;
+      opacity: 0.8;
     }
     .spacing-value {
       font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, monospace;
       font-size: 12px;
-      margin-top: 4px;
+      color: var(--color-on-surface);
     }
 
-    /* Shapes / border radius */
+    /* ==========================================
+       SHAPES
+       ========================================== */
     .shape-demo {
       display: flex;
-      gap: 24px;
-      padding: 32px 0;
+      gap: var(--space-4);
+      flex-wrap: wrap;
     }
     .shape-box {
-      width: 80px;
-      height: 80px;
+      width: 100px;
+      height: 100px;
       background: var(--color-primary);
-      color: var(--color-on-surface);
+      color: var(--color-surface);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-weight: 600;
+      font-family: var(--font-functional);
+      font-weight: 700;
       font-size: 14px;
+      border-radius: var(--rounded-card);
     }
     .shape-pill {
-      width: 80px;
-      height: 80px;
+      width: 100px;
+      height: 100px;
       background: var(--color-secondary);
-      color: var(--color-on-surface);
+      color: var(--color-surface);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-weight: 600;
-      border-radius: 9999px;
+      font-family: var(--font-functional);
+      font-weight: 700;
+      font-size: 14px;
+      border-radius: var(--rounded-pill);
     }
     .shape-avatar {
-      width: 80px;
-      height: 80px;
-      background: #3D5A8A;
-      color: var(--color-on-surface);
+      width: 100px;
+      height: 100px;
+      background: var(--color-accent);
+      color: var(--color-surface);
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-weight: 600;
+      font-family: var(--font-expressive);
+      font-size: 32px;
     }
 
-    /* Components */
-    .component-showcase {
-      display: grid;
-      gap: 32px;
+    /* ==========================================
+       COMPONENTS
+       ========================================== */
+    .component-group {
+      margin-bottom: var(--space-5);
     }
     .component-group h3 {
-      font-size: 20px;
-      font-weight: 600;
-      margin: 0 0 16px;
+      font-family: var(--font-expressive);
+      font-size: 24px;
+      font-weight: 400;
+      margin-bottom: var(--space-2);
+      color: var(--color-on-surface);
     }
     .component-card {
-      border: 1px solid #e0e0e0;
-      border-radius: 8px;
+      background: var(--color-surface);
+      border-radius: var(--rounded-card);
       overflow: hidden;
+      margin-bottom: var(--space-2);
     }
     .component-header {
-      padding: 16px 20px;
-      border-bottom: 1px solid #e0e0e0;
+      padding: var(--space-2) var(--space-3);
+      border-bottom: 1px solid rgba(0,0,0,0.06);
     }
     .component-header .name {
-      font-weight: 600;
+      font-family: var(--font-functional);
+      font-weight: 700;
       font-size: 14px;
     }
     .component-body {
-      padding: 20px;
+      padding: var(--space-3);
     }
     .component-demo {
       display: inline-flex;
       align-items: center;
+      justify-content: center;
       height: 44px;
-      padding: 0 20px;
-      border-radius: 4px;
-      font-size: 14px;
-      font-weight: 600;
+      padding: 0 var(--space-3);
+      border-radius: var(--rounded-button);
+      font-family: var(--font-functional);
+      font-size: 16px;
+      font-weight: 700;
       cursor: pointer;
-      transition: background 0.15s;
+      transition: transform 0.15s, box-shadow 0.15s;
     }
     .component-demo:hover {
-      opacity: 0.9;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
-    .component-demo:focus {
-      outline: 2px solid var(--color-primary);
-      outline-offset: 2px;
+    .component-note {
+      display: block;
+      margin-top: var(--space-1);
+      font-family: var(--font-functional);
+      font-size: 12px;
+      color: var(--color-on-surface);
+      opacity: 0.5;
     }
 
-    /* Navigation */
+    /* ==========================================
+       NAV DEMO
+       ========================================== */
     .nav-demo {
+      background: var(--color-primary);
+      padding: var(--space-2) var(--space-3);
+      border-radius: var(--rounded-card);
       display: flex;
-      gap: 12px;
-      margin-top: 8px;
+      gap: var(--space-2);
       flex-wrap: wrap;
     }
     .nav-link {
-      font-size: 13px;
-      font-weight: 500;
-      padding: 8px 16px;
-      border-radius: 4px;
-      color: var(--color-on-surface);
+      font-family: var(--font-functional);
+      font-size: 16px;
+      font-weight: 400;
+      padding: var(--space-1) var(--space-2);
+      border-radius: var(--rounded-button);
+      color: var(--color-surface);
       text-decoration: none;
       transition: background 0.15s;
     }
     .nav-link:hover {
-      background: rgba(184,41,37,0.1);
+      background: rgba(255,255,255,0.15);
     }
     .nav-link.active {
-      background: var(--color-primary);
-      color: var(--color-on-surface);
+      font-weight: 700;
+      text-decoration: underline;
+      text-underline-offset: 3px;
     }
 
-    /* Notes/Do's and Don'ts */
+    /* ==========================================
+       CHIPS
+       ========================================== */
+    .chips-demo {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-1);
+    }
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      height: 32px;
+      padding: 0 12px;
+      border-radius: var(--rounded-pill);
+      font-family: var(--font-functional);
+      font-size: 14px;
+      font-weight: 400;
+    }
+
+    /* ==========================================
+       SEPARATOR
+       ========================================== */
+    .separator-demo {
+      height: 2px;
+      background: linear-gradient(90deg, transparent 0%, var(--color-accent) 50%, transparent 100%);
+      max-width: 800px;
+      margin: var(--space-4) 0;
+    }
+
+    /* ==========================================
+       FOOTER DEMO
+       ========================================== */
+    .footer-demo {
+      background: var(--color-on-surface);
+      color: var(--color-surface);
+      padding: var(--space-4) var(--space-3);
+      text-align: center;
+      border-radius: var(--rounded-card);
+    }
+    .footer-demo p {
+      font-family: var(--font-expressive);
+      font-size: 24px;
+    }
+
+    /* ==========================================
+       RULES
+       ========================================== */
     .rules-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 24px;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: var(--space-4);
     }
     .rules-col h3 {
-      font-size: 18px;
-      font-weight: 600;
-      margin: 0 0 12px;
+      font-family: var(--font-expressive);
+      font-size: 24px;
+      font-weight: 400;
+      margin-bottom: var(--space-2);
     }
     .rules-list {
       list-style: none;
-      padding: 0;
-      margin: 0;
     }
     .rules-list li {
-      padding: 8px 0;
+      padding: var(--space-1) 0;
       display: flex;
       align-items: flex-start;
-      gap: 8px;
+      gap: var(--space-1);
+      font-family: var(--font-functional);
+      font-size: 14px;
+      line-height: 1.5;
     }
-    .rules-list .marker {
-      flex: 0 0 16px;
-      width: 16px;
-      height: 16px;
+    .marker {
+      flex: 0 0 20px;
+      width: 20px;
+      height: 20px;
       border-radius: 50%;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      font-size: 10px;
+      font-size: 11px;
       font-weight: 700;
     }
-    .marker-yes { background: var(--color-primary); color: var(--color-on-surface); }
+    .marker-yes { background: var(--color-primary); color: var(--color-surface); }
     .marker-no { background: var(--color-on-surface); color: var(--color-surface); }
 
-    /* Motion/reduced preference */
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      * { transition: none !important; animation: none !important; }
-    }
-
-    /* Focus visible */
-    :focus-visible {
-      outline: 2px solid var(--color-primary);
-      outline-offset: 2px;
+    /* ==========================================
+       FOOTER
+       ========================================== */
+    .page-footer {
+      margin-top: var(--space-8);
+      padding: var(--space-4) 0;
+      border-top: 1px solid rgba(0,0,0,0.1);
+      text-align: center;
+      font-family: var(--font-functional);
+      font-size: 14px;
+      color: var(--color-on-surface);
+      opacity: 0.5;
     }
   </style>
 </head>
@@ -334,171 +508,184 @@
 
   <div class="container">
 
-    <header style="margin-bottom: 48px; padding-bottom: 32px; border-bottom: 1px solid #e0e0e0;">
-      <h1 style="margin: 0; font-size: 32px;">Mi Sistema de Diseño</h1>
-      <p style="margin: 8px 0 0; color: #666; font-size: 14px;">Cecilia Ramírez Vázquez — Referencia visual</p>
+    <header class="header">
+      <h1>Mi Sistema de Diseño</h1>
+      <p>Cecilia Ramírez Vázquez — Referencia visual</p>
     </header>
 
     <main id="contenido">
 
       <!-- ========================================== -->
-      <!-- Paleta de colores -->
+      <!-- PALETA DE COLORES -->
       <!-- ========================================== -->
-      <section style="margin-bottom: 48px;">
-        <h2 style="margin-top: 0;">Paleta de colores</h2>
-        <p style="margin: 16px 0 0; font-size: 14px; color: #666;">
-          El color funciona para jerarquizar, navegar y llamar la atención. <br>
-          <strong>Rojo corazón</strong>: marca, CTA principal. <strong>Azul creativo</strong>: secundario, acciones complementarias. <strong>Turquesa</strong>: gráfico, never text.
-        </div>
+      <section class="section">
+        <h2 class="section-title">Paleta de colores</h2>
+        <p class="section-desc">
+          El color funciona para jerarquizar, navegar y llamar la atención.
+          <strong>Rojo corazón</strong>: marca, CTA principal.
+          <strong>Azul creativo</strong>: secundario, acciones complementarias.
+          <strong>Turquesa</strong>: gráfico, never text.
+        </p>
         <div class="color-grid">
-          <div class="color-card" style="--color-primary: #B82925;">
+          <div class="color-card">
             <div class="color-swatch" style="background: #B82925;"></div>
-            <div class="color-name">Rojo corazón</div>
-            <div class="color-hex">#B82925</div>
-            <div class="color-usage">CTA principal, títulos, marcas, navegación activa</div>
+            <div class="color-info">
+              <div class="color-name">Rojo corazón</div>
+              <div class="color-hex">#B82925</div>
+              <div class="color-usage">CTA principal, títulos, marcas, navegación activa</div>
+            </div>
           </div>
-          <div class="color-card" style="--color-secondary: #3D5A8A;">
+          <div class="color-card">
             <div class="color-swatch" style="background: #3D5A8A;"></div>
-            <div class="color-name">Azul creativo</div>
-            <div class="color-hex">#3D5A8A</div>
-            <div class="color-usage">Subtítulos, enlaces secundarios, botones secundarios, etiquetas</div>
+            <div class="color-info">
+              <div class="color-name">Azul creativo</div>
+              <div class="color-hex">#3D5A8A</div>
+              <div class="color-usage">Subtítulos, enlaces secundarios, botones secundarios, etiquetas</div>
+            </div>
           </div>
-          <div class="color-card" style="--color-accent: #00A79D;">
+          <div class="color-card">
             <div class="color-swatch" style="background: #00A79D;"></div>
-            <div class="color-name">Turquesa</div>
-            <div class="color-hex">#00A79D</div>
-            <div class="color-usage">SOLO gráfico: hover, indicadores, separadores. NUNCA texto.</div>
+            <div class="color-info">
+              <div class="color-name">Turquesa</div>
+              <div class="color-hex">#00A79D</div>
+              <div class="color-usage">SOLO gráfico: hover, indicadores, separadores. NUNCA texto.</div>
+            </div>
           </div>
-          <div class="color-card" style="--color-background: #E7ECE8;">
+          <div class="color-card">
             <div class="color-swatch" style="background: #E7ECE8;"></div>
-            <div class="color-name">Verde muy claro</div>
-            <div class="color-hex">#E7ECE8</div>
-            <div class="color-usage">Fondo base predominante, secciones principales</div>
+            <div class="color-info">
+              <div class="color-name">Verde muy claro</div>
+              <div class="color-hex">#E7ECE8</div>
+              <div class="color-usage">Fondo base predominante, secciones principales</div>
+            </div>
           </div>
-          <div class="color-card" style="--color-surface: #FFFFFF;">
-            <div class="color-swatch" style="background: #FFFFFF;"></div>
-            <div class="color-name">Blanco</div>
-            <div class="color-hex">#FFFFFF</div>
-            <div class="color-usage">Tarjetas, campos, contenedores, superficies</div>
+          <div class="color-card">
+            <div class="color-swatch" style="background: #FFFFFF; border: 1px solid rgba(0,0,0,0.08);"></div>
+            <div class="color-info">
+              <div class="color-name">Blanco</div>
+              <div class="color-hex">#FFFFFF</div>
+              <div class="color-usage">Tarjetas, campos, contenedores, superficies</div>
+            </div>
           </div>
-          <div class="color-card" style="--color-on-surface: #000000;">
+          <div class="color-card">
             <div class="color-swatch" style="background: #000000;"></div>
-            <div class="color-name">Negro</div>
-            <div class="color-hex">#000000</div>
-            <div class="color-usage">Texto principal, navegación, máximo contraste</div>
+            <div class="color-info">
+              <div class="color-name">Negro</div>
+              <div class="color-hex">#000000</div>
+              <div class="color-usage">Texto principal, navegación, máximo contraste</div>
+            </div>
           </div>
         </div>
       </section>
 
       <!-- ========================================== -->
-      <!-- Escala tipográfica -->
+      <!-- ESCALA TIPOGRÁFICA -->
       <!-- ========================================== -->
-      <section style="margin-bottom: 48px;">
-        <h2>Escala tipográfica</h2>
-        <p style="margin: 16px 0 0; font-size: 14px; color: #666;">
-          Dos familias: <strong>Quimby Gobernatorial</strong> (expresiva, identidad) y <strong>Acumin Variable Concept</strong> (funcional, lectura).
+      <section class="section">
+        <h2 class="section-title">Escala tipográfica</h2>
+        <p class="section-desc">
+          Dos familias: <strong>Quimby Mayoral</strong> (expresiva, identidad) y <strong>Acumin Variable Concept</strong> (funcional, lectura).
         </p>
         <div class="typography-showcase">
           <div class="type-spec">
-            <div class="name">display · 64px</div>
-            <div class="sample type-scale display" style="font-family: 'Quimby Gobernatorial', serif;">Hola, soy Ceci</div>
+            <div class="label">display · 64px</div>
+            <div class="sample" style="font-family: var(--font-expressive); font-size: 64px; font-weight: 400; line-height: 1.1;">Hola, soy Ceci</div>
             <div class="token">typography.display</div>
           </div>
           <div class="type-spec">
-            <div class="name">h1 · 48px</div>
-            <div class="sample type-scale h1" style="font-family: 'Quimby Gobernatorial', serid;">Proyectos destacados</div>
+            <div class="label">h1 · 48px</div>
+            <div class="sample" style="font-family: var(--font-expressive); font-size: 48px; font-weight: 400; line-height: 1.15;">Proyectos destacados</div>
             <div class="token">typography.h1</div>
           </div>
           <div class="type-spec">
-            <div class="name">h2 · 40px</div>
-            <div class="sample type-scale h2" style="font-family: 'Quimby Gobernatorial', serif;">Investigación y diseño</div>
+            <div class="label">h2 · 40px</div>
+            <div class="sample" style="font-family: var(--font-expressive); font-size: 40px; font-weight: 400; line-height: 1.2;">Investigación y diseño</div>
             <div class="token">typography.h2</div>
           </div>
           <div class="type-spec">
-            <div class="name">subtitle · 24px</div>
-            <div class="sample type-scale subtitle" style="font-family: 'Acumin Variable Concept', sans-serif;">Subtítulo de sección</div>
+            <div class="label">subtitle · 24px</div>
+            <div class="sample" style="font-family: var(--font-functional); font-size: 24px; font-weight: 700; line-height: 1.25;">Subtítulo de sección</div>
             <div class="token">typography.subtitle</div>
           </div>
           <div class="type-spec">
-            <div class="name">body · 16px</div>
-            <div class="sample type-scale body">El diseño es una herramienta para investigar, experimentar y resolver problemas. Se construye sobre una base de curiosidad y método.</div>
+            <div class="label">body · 16px</div>
+            <div class="sample" style="font-family: var(--font-functional); font-size: 16px; font-weight: 400; line-height: 1.5;">El diseño es una herramienta para investigar, experimentar y resolver problemas.</div>
             <div class="token">typography.body</div>
           </div>
           <div class="type-spec">
-            <div class="name">small · 14px</div>
-            <div class="sample type-scale small">2026 · Diseño digital · Prototipado</div>
+            <div class="label">small · 14px</div>
+            <div class="sample" style="font-family: var(--font-functional); font-size: 14px; font-weight: 400; line-height: 1.4;">2026 · Diseño digital · Prototipado</div>
             <div class="token">typography.small</div>
           </div>
           <div class="type-spec">
-            <div class="name">buttonLabel · 16px</div>
-            <div class="sample type-scale buttonLabel">Botón</div>
+            <div class="label">buttonLabel · 16px</div>
+            <div class="sample" style="font-family: var(--font-functional); font-size: 16px; font-weight: 700; line-height: 1;">Botón</div>
             <div class="token">typography.buttonLabel</div>
           </div>
           <div class="type-spec">
-            <div class="name">link · 16px</div>
-            <div class="sample type-scale link" style="color: var(--color-primary);">Enlace</div>
+            <div class="label">link · 16px</div>
+            <div class="sample" style="font-family: var(--font-functional); font-size: 16px; font-weight: 700; line-height: 1; color: var(--color-secondary);">Enlace</div>
             <div class="token">typography.link</div>
           </div>
         </div>
-
-        <p style="margin: 24px 0 0; font-size: 13px; color: #666;">
+        <p class="section-note">
           Jerarquía por tamaño, peso, estilo y color — nunca opacidad. Cuerpo nunca baja de 16px. Quimby solo en títulos e identidad.
         </p>
       </section>
 
       <!-- ========================================== -->
-      <!-- Espaciado -->
+      <!-- ESCALA DE ESPACIADO -->
       <!-- ========================================== -->
-      <section style="margin-bottom: 48px;">
-        <h2>Escala de espaciado</h2>
-        <p style="margin: 16px 0 0; font-size: 14px; color: #666;">
+      <section class="section">
+        <h2 class="section-title">Escala de espaciado</h2>
+        <p class="section-desc">
           Base de 8px. Valores: 8 · 16 · 24 · 32 · 48 · 64 · 80 · 96px.
         </p>
         <div class="spacing-scale">
           <div class="spacing-item">
-            <div class="spacing-bar" style="width: 8px;"></div>
+            <div class="spacing-bar" style="width: 8px; height: 8px;"></div>
             <div class="spacing-value">8px</div>
           </div>
           <div class="spacing-item">
-            <div class="spacing-bar" style="width: 16px;"></div>
+            <div class="spacing-bar" style="width: 16px; height: 16px;"></div>
             <div class="spacing-value">16px</div>
           </div>
           <div class="spacing-item">
-            <div class="spacing-bar" style="width: 24px;"></div>
+            <div class="spacing-bar" style="width: 24px; height: 24px;"></div>
             <div class="spacing-value">24px</div>
           </div>
           <div class="spacing-item">
-            <div class="spacing-bar" style="width: 32px;"></div>
+            <div class="spacing-bar" style="width: 32px; height: 32px;"></div>
             <div class="spacing-value">32px</div>
           </div>
           <div class="spacing-item">
-            <div class="spacing-bar" style="width: 48px;"></div>
+            <div class="spacing-bar" style="width: 48px; height: 48px;"></div>
             <div class="spacing-value">48px</div>
           </div>
           <div class="spacing-item">
-            <div class="spacing-bar" style="width: 64px;"></div>
+            <div class="spacing-bar" style="width: 64px; height: 64px;"></div>
             <div class="spacing-value">64px</div>
           </div>
           <div class="spacing-item">
-            <div class="spacing-bar" style="width: 80px;"></div>
+            <div class="spacing-bar" style="width: 80px; height: 80px;"></div>
             <div class="spacing-value">80px</div>
           </div>
           <div class="spacing-item">
-            <div class="spacing-bar" style="width: 96px;"></div>
+            <div class="spacing-bar" style="width: 96px; height: 96px;"></div>
             <div class="spacing-value">96px</div>
           </div>
         </div>
-        <p style="margin: 24px 0 0; font-size: 13px; color: #666;">
+        <p class="section-note">
           Elementos internos: 12–24px. Separaciones de sección: 64–96px. Márgenes móviles: 16–24px.
         </p>
       </section>
 
       <!-- ========================================== -->
-      <!-- Radios y formas -->
+      <!-- RADIOS Y FORMAS -->
       <!-- ========================================== -->
-      <section style="margin-bottom: 48px;">
-        <h2>Radios y formas</h2>
-        <p style="margin: 16px 0 0; font-size: 14px; color: #666;">
+      <section class="section">
+        <h2 class="section-title">Radios y formas</h2>
+        <p class="section-desc">
           Contenedores con esquinas redondeadas de 16px. Formas completamente redondeadas con 9999px (píldora/círculo).
         </p>
         <div class="shape-demo">
@@ -506,7 +693,7 @@
           <div class="shape-pill">9999px</div>
           <div class="shape-avatar">CR</div>
         </div>
-        <p style="margin: 24px 0 0; font-size: 13px; color: #666;">
+        <p class="section-note">
           - Tarjetas y contenedores: 16px<br>
           - Elementos redondeados/píldora: 9999px<br>
           - Formas orgánicas/ilustraciones: sin geometría perfecta, imperfección controlada es parte de la personalidad
@@ -514,35 +701,35 @@
       </section>
 
       <!-- ========================================== -->
-      <!-- Profundidad y elevación -->
+      <!-- ELEVACIÓN Y PROFUNDIDAD -->
       <!-- ========================================== -->
-      <section style="margin-bottom: 48px;">
-        <h2>Elevación y profundidad</h2>
-        <p style="margin: 16px 0 0; font-size: 14px; color: #666;">
+      <section class="section">
+        <h2 class="section-title">Elevación y profundidad</h2>
+        <p class="section-desc">
           Diseño principalmente plano. Separación por color, composición y contraste. Sombras muy suaves solo en hover.
         </p>
-        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 16px;">
-          <div style="border: 1px solid #e0e0e0; border-radius: 8px; padding: 16px; text-align: center;">
-            <div style="font-weight: 600; font-size: 13px; margin-bottom: 4px;">Plano</div>
-            <p style="font-size: 12px; color: #666;">Fondos, navegación, reposo — sin sombra</p>
+        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: var(--space-3); margin-top: var(--space-2);">
+          <div style="background: var(--color-surface); border-radius: var(--rounded-card); padding: var(--space-3); text-align: center;">
+            <div style="font-family: var(--font-functional); font-weight: 700; font-size: 14px; margin-bottom: 8px;">Plano</div>
+            <p style="font-family: var(--font-functional); font-size: 13px; color: var(--color-on-surface); opacity: 0.6;">Fondos, navegación, reposo — sin sombra</p>
           </div>
-          <div style="border: 1px solid #e0e0e0; border-radius: 8px; padding: 16px; text-align: center;">
-            <div style="font-weight: 600; font-size: 13px; margin-bottom: 4px;">Elevación sutil</div>
-            <p style="font-size: 12px; color: #666;">Hover en tarjetas/elementos interactivos</p>
+          <div style="background: var(--color-surface); border-radius: var(--rounded-card); padding: var(--space-3); text-align: center;">
+            <div style="font-family: var(--font-functional); font-weight: 700; font-size: 14px; margin-bottom: 8px;">Elevación sutil</div>
+            <p style="font-family: var(--font-functional); font-size: 13px; color: var(--color-on-surface); opacity: 0.6;">Hover en tarjetas/elementos interactivos</p>
           </div>
-          <div style="border: 1px solid #e0e0e0; border-radius: 8px; padding: 16px; text-align: center;">
-            <div style="font-weight: 600; font-size: 13px; margin-bottom: 4px;">Contraste</div>
-            <p style="font-size: 12px; color: #666;">Fondos de color para separar secciones</p>
+          <div style="background: var(--color-surface); border-radius: var(--rounded-card); padding: var(--space-3); text-align: center;">
+            <div style="font-family: var(--font-functional); font-weight: 700; font-size: 14px; margin-bottom: 8px;">Contraste</div>
+            <p style="font-family: var(--font-functional); font-size: 13px; color: var(--color-on-surface); opacity: 0.6;">Fondos de color para separar secciones</p>
           </div>
         </div>
       </section>
 
       <!-- ========================================== -->
-      <!-- Componentes -->
+      <!-- COMPONENTES -->
       <!-- ========================================== -->
-      <section style="margin-bottom: 48px;">
-        <h2>Componentes</h2>
-        <p style="margin: 16px 0 0; font-size: 14px; color: #666;">
+      <section class="section">
+        <h2 class="section-title">Componentes</h2>
+        <p class="section-desc">
           Muestra construida desde los tokens de components. Áreas interactivas mínimo 44 × 44 px.
         </p>
 
@@ -551,40 +738,40 @@
           <h3>Botones y CTA</h3>
           <div class="component-card">
             <div class="component-header">
-              <span class="component-name">buttonPrimary</span>
+              <span class="name">buttonPrimary</span>
             </div>
             <div class="component-body">
-              <button class="component-demo" style="background: var(--color-primary); color: var(--color-on-surface);">
+              <button class="component-demo" style="background: var(--color-primary); color: var(--color-surface);">
                 CTA Principal
               </button>
-              <span style="display: block; margin-top: 8px; font-size: 12px; color: #666;">
-                Fondo: {colors.primary} | Texto: {colors.surface} | 44px alto | Radio 16px
+              <span class="component-note">
+                Fondo: #B82925 | Texto: #FFFFFF | 44px alto | Radio 16px
               </span>
             </div>
           </div>
           <div class="component-card">
             <div class="component-header">
-              <span class="component-name">buttonSecondary</span>
+              <span class="name">buttonSecondary</span>
             </div>
             <div class="component-body">
-              <button class="component-demo" style="background: var(--color-surface); color: var(--color-primary); border: 1px solid var(--color-primary);">
+              <button class="component-demo" style="background: var(--color-surface); color: var(--color-primary); border: 2px solid var(--color-primary);">
                 Secundario (rojo)
               </button>
-              <span style="display: block; margin-top: 8px; font-size: 12px; color: #666;">
-                Fondo: {colors.background} | Texto: {colors.primary} | Borde rojo | 44px alto
+              <span class="component-note">
+                Fondo: #FFFFFF | Texto: #B82925 | Borde rojo | 44px alto
               </span>
             </div>
           </div>
           <div class="component-card">
             <div class="component-header">
-              <span class="component-name">buttonSecondaryAlt</span>
+              <span class="name">buttonSecondaryAlt</span>
             </div>
             <div class="component-body">
-              <button class="component-demo" style="background: var(--color-surface); color: var(--color-secondary); border: 1px solid var(--color-secondary);">
+              <button class="component-demo" style="background: var(--color-surface); color: var(--color-secondary); border: 2px solid var(--color-secondary);">
                 Secundario (azul)
               </button>
-              <span style="display: block; margin-top: 8px; font-size: 12px; color: #666;">
-                Fondo: {colors.background} | Texto: {colors.secondary} | Borde azul | 44px alto
+              <span class="component-note">
+                Fondo: #FFFFFF | Texto: #3D5A8A | Borde azul | 44px alto
               </span>
             </div>
           </div>
@@ -595,27 +782,27 @@
           <h3>Enlaces</h3>
           <div class="component-card">
             <div class="component-header">
-              <span class="component-name">linkPrimary</span>
+              <span class="name">linkPrimary</span>
             </div>
             <div class="component-body">
-              <a class="component-demo" style="color: var(--color-secondary); text-decoration: underline underline offset 3px;">
+              <a class="component-demo" style="color: var(--color-secondary); text-decoration: underline; text-underline-offset: 3px; height: auto; padding: 0;">
                 Enlace secundario (azul)
               </a>
-              <span style="display: block; margin-top: 8px; font-size: 12px; color: #666;">
-                Color: {colors.secondary} | 16px Bold | Hover: subrayado + cambio de color
+              <span class="component-note">
+                Color: #3D5A8A | 16px Bold | Hover: subrayado + cambio de color
               </span>
             </div>
           </div>
           <div class="component-card">
             <div class="component-header">
-              <span class="component-name">linkSecondary</span>
+              <span class="name">linkSecondary</span>
             </div>
             <div class="component-body">
-              <a class="component-demo" style="color: var(--color-primary); text-decoration: underline underline offset 3px;">
+              <a class="component-demo" style="color: var(--color-primary); text-decoration: underline; text-underline-offset: 3px; height: auto; padding: 0;">
                 Enlace primario (rojo)
               </a>
-              <span style="display: block; margin-top: 8px; font-size: 12px; color: #666;">
-                Color: {colors.primary} | 16px Bold | Hover: subrayado + rojo más oscuro
+              <span class="component-note">
+                Color: #B82925 | 16px Bold | Hover: subrayado + rojo más oscuro
               </span>
             </div>
           </div>
@@ -624,14 +811,11 @@
         <!-- Tarjetas -->
         <div class="component-group">
           <h3>Tarjetas de proyecto</h3>
-          <div class="component-card" style="background: var(--color-surface);">
-            <div class="component-header" style="border-bottom: 1px solid #e0e0e0; padding: 16px 20px;">
-              <span class="component-name" style="font-weight: 600;">Diseño UX/UI · Investigación</span>
-            </div>
-            <div class="component-body" style="padding: 20px;">
-              <h4 style="margin: 0 0 8px; font-size: 16px; font-weight: 600;">Aplicación para hábitos de lectura</h4>
-              <p style="margin: 0 0 12px; font-size: 14px; color: #666;">Investigación, conceptualización y prototipado de una interfaz editorial para lectores académicos.</p>
-              <p style="margin: 0; font-size: 12px; color: var(--color-primary);">2026 · Prototipado en Figma</p>
+          <div class="component-card">
+            <div class="component-body">
+              <h4 style="font-family: var(--font-functional); font-size: 16px; font-weight: 600; margin-bottom: 8px;">Aplicación para hábitos de lectura</h4>
+              <p style="font-family: var(--font-functional); font-size: 14px; color: var(--color-on-surface); opacity: 0.7; margin-bottom: 12px;">Investigación, conceptualización y prototipado de una interfaz editorial para lectores académicos.</p>
+              <p style="font-family: var(--font-functional); font-size: 12px; color: var(--color-primary); font-weight: 600;">2026 · Prototipado en Figma</p>
             </div>
           </div>
         </div>
@@ -646,34 +830,34 @@
             <a class="nav-link" href="#cv">CV</a>
             <a class="nav-link" href="#contacto">Contacto</a>
           </div>
-          <p style="margin: 16px 0 0; font-size: 12px; color: #666;">
-            Fondo: {colors.primary} | Texto: {colors.surface} | Estado activo: cambio de color + subrayado
+          <p class="section-note">
+            Fondo: #B82925 | Texto: #FFFFFF | Estado activo: subrayado + bold
           </p>
         </div>
 
-        <!-- Chips / etiquetas -->
+        <!-- Chips / Etiquetas -->
         <div class="component-group">
           <h3>Chips / Etiquetas</h3>
-          <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px;">
-            <span style="display: inline-flex; align-items: center; padding: 4px 12px; background: var(--color-background); color: var(--color-on-surface); border-radius: 9999px; font-size: 12px;">UX/UI</span>
-            <span style="display: inline-flex; align-items: center; padding: 4px 12px; background: var(--color-secondary); color: var(--color-on-surface); border-radius: 9999px; font-size: 12px;">Diseño digital</span>
-            <span style="display: inline-flex; align-items: center; padding: 4px 12px; background: var(--color-accent); color: var(--color-on-surface); border-radius: 9999px; font-size: 12px;">Prototipado</span>
+          <div class="chips-demo">
+            <span class="chip" style="background: var(--color-background); color: var(--color-on-surface);">UX/UI</span>
+            <span class="chip" style="background: var(--color-secondary); color: var(--color-surface);">Diseño digital</span>
+            <span class="chip" style="background: var(--color-accent); color: var(--color-surface);">Prototipado</span>
           </div>
         </div>
 
         <!-- Separador -->
         <div class="component-group">
           <h3>Separador</h3>
-          <div style="height: 1px; background: var(--color-accent); margin: 32px 0;"></div>
-          <p style="margin: 16px 0 0; font-size: 12px; color: #666;">
-            Color: {colors.accent}. Uso: únicamente para marcar cambios importantes. No como línea decorativa constante.
+          <div class="separator-demo"></div>
+          <p class="section-note">
+            Color: #00A79D. Uso: únicamente para marcar cambios importantes. No como línea decorativa constante.
           </p>
         </div>
 
         <!-- Footer -->
         <div class="component-group">
           <h3>Footer</h3>
-          <div style="background: var(--color-on-surface); color: var(--color-surface); padding: 32px 24px; text-align: center;">
+          <div class="footer-demo">
             <p>Hecho con el corazón</p>
           </div>
         </div>
@@ -681,18 +865,18 @@
         <!-- Indicador de progreso -->
         <div class="component-group">
           <h3>Indicador de progreso</h3>
-          <div style="height: 3px; background: var(--color-primary); width: 0%; transition: width 0.3s ease;"></div>
-          <p style="margin: 16px 0 0; font-size: 12px; color: #666;">
-            Color: {colors.primary}. Posición: barra superior. Avance conforme usuario hace scroll.
+          <div style="height: 3px; background: var(--color-primary); width: 30%; border-radius: 2px;"></div>
+          <p class="section-note">
+            Color: #B82925. Posición: barra superior. Avance conforme usuario hace scroll.
           </p>
         </div>
       </section>
 
       <!-- ========================================== -->
-      <!-- Reglas (sí y no) -->
+      <!-- REGLAS -->
       <!-- ========================================== -->
-      <section style="margin-bottom: 48px;">
-        <h2>Reglas: lo que sí y lo que no</h2>
+      <section class="section">
+        <h2 class="section-title">Reglas: lo que sí y lo que no</h2>
         <div class="rules-grid">
           <div class="rules-col">
             <h3>Lo que sí se permite</h3>
@@ -725,7 +909,7 @@
 
   </div>
 
-  <footer style="margin-top: 48px; padding: 32px 0; color: #666; font-size: 13px; text-align: center;">
+  <footer class="page-footer">
     Mi Sistema de Diseño · Cecilia Ramírez Vázquez · Tokens extraídos de DESIGN.md
   </footer>
 
