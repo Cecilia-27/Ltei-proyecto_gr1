@@ -190,11 +190,11 @@ ul, ol { list-style: none; }
    PROGRESS INDICATOR (top bar) - Color cycling
    ========================================== */
 .progress-bar {
-  position: fixed; top: 0; left: 0; width: 0%; height: 8px;
+  position: fixed; top: 0; left: 0; width: 0%; height: 3px;
   z-index: 1000;
   background: linear-gradient(90deg,
     var(--color-primary) 0%,
-    #6081BC 33%,
+    var(--color-secondary) 33%,
     var(--color-accent) 66%,
     var(--color-primary) 100%);
   background-size: 300% 100%;
@@ -214,7 +214,7 @@ ul, ol { list-style: none; }
   background: var(--color-primary);
   display: flex; align-items: center; justify-content: center;
   padding: 0 var(--space-4);
-  min-height: 100px;
+  min-height: 80px;
 }
 .nav-inner {
   display: flex;
@@ -230,7 +230,7 @@ ul, ol { list-style: none; }
   font-family: var(--font-functional);
   font-size: 16px; font-weight: 400;
   color: var(--color-surface);
-  padding: var(--space-1) var(--space-1);
+  padding: var(--space-1) var(--space-2);
   border-radius: var(--rounded-button);
   transition: background 0.15s, color 0.15s;
   white-space: nowrap;
@@ -453,7 +453,7 @@ ul, ol { list-style: none; }
   font-size: clamp(20px, 3.5vw, 30px);
   font-weight: 700;
   font-style: normal;
-  color: #6081BC;
+  color: #3D5A8A;
   text-align: center;
   margin-top: calc(-1 * var(--space-2));
   margin-bottom: var(--space-5);
@@ -553,7 +553,7 @@ ul, ol { list-style: none; }
   font-size: clamp(20px, 3.5vw, 30px);
   font-weight: 700;
   font-style: normal;
-  color: #6081BC;
+  color: #3D5A8A;
   margin-top: var(--space-4);
 }
 
@@ -676,7 +676,7 @@ ul, ol { list-style: none; }
   font-size: clamp(22px, 3.8vw, 32px);
   font-weight: 700;
   font-style: normal;
-  color: #6081BC;
+  color: #3D5A8A;
   margin: 0;
   line-height: 1.2;
 }
@@ -785,7 +785,7 @@ ul, ol { list-style: none; }
   font-size: clamp(22px, 3.8vw, 32px);
   font-weight: 700;
   font-style: normal;
-  color: #6081BC;
+  color: #3D5A8A;
   margin: 0;
   line-height: 1.2;
 }
@@ -800,15 +800,14 @@ ul, ol { list-style: none; }
   align-items: center;
   gap: var(--space-2);
   padding: var(--space-3);
-  background: rgba(255,255,255,0.03);
+  background: var(--color-surface);
   border-radius: var(--rounded-card);
-  border: 1px solid rgba(0,0,0,0.04);
-  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  border: 1px solid rgba(0,0,0,0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .software-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 16px 40px rgba(0,0,0,0.08);
-  background: rgba(255,255,255,0.06);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.08);
 }
 .software-icon {
   width: 48px;
@@ -818,7 +817,7 @@ ul, ol { list-style: none; }
   justify-content: center;
   background: transparent;
   border-radius: 12px;
-  border: 1px solid rgba(255,255,255,0.15);
+  border: 1px solid rgba(0,0,0,0.08);
   transition: transform 0.3s ease, border-color 0.3s ease, background 0.3s ease;
 }
 .software-icon img {
@@ -841,14 +840,14 @@ ul, ol { list-style: none; }
 }
 .software-progress-wrapper {
   width: 100%;
-  height: 6px;
-  background: rgba(96, 129, 188, 0.12);
-  border-radius: 3px;
+  height: 4px;
+  background: rgba(0,0,0,0.06);
+  border-radius: 2px;
   overflow: hidden;
 }
 .software-progress {
   height: 100%;
-  border-radius: 3px;
+  border-radius: 2px;
   transform-origin: left center;
   transform: scaleX(0);
   transition: transform 1.2s cubic-bezier(0.22, 1, 0.36, 1);
@@ -856,8 +855,8 @@ ul, ol { list-style: none; }
 .software-progress.is-visible {
   transform: scaleX(var(--progress, 1));
 }
-.software-progress--red { background: linear-gradient(90deg, var(--color-primary), #d4403b); }
-.software-progress--blue { background: linear-gradient(90deg, #6081BC, #4A6FA5); }
+.software-progress--red { background: linear-gradient(90deg, var(--color-primary), #c4332e); }
+.software-progress--blue { background: linear-gradient(90deg, var(--color-secondary), #4A6FA5); }
 .software-progress--accent { background: linear-gradient(90deg, var(--color-accent), #008c83); }
 
 /* Reduced motion */
@@ -953,7 +952,7 @@ ul, ol { list-style: none; }
   font-size: clamp(22px, 3.8vw, 32px);
   font-weight: 700;
   font-style: normal;
-  color: #6081BC;
+  color: #3D5A8A;
   margin: 0;
   line-height: 1.2;
 }
@@ -995,8 +994,8 @@ ul, ol { list-style: none; }
   transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.4s ease;
 }
 .trabajo-card:hover {
-  transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 24px 48px rgba(0,0,0,0.15);
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.12);
   z-index: 10;
 }
 
@@ -1267,7 +1266,7 @@ ul, ol { list-style: none; }
   font-family: var(--font-functional);
   font-size: clamp(14px, 2vw, 16px);
   font-weight: 400;
-  color: #6081BC;
+  color: #3D5A8A;
   font-weight: 700;
   margin-bottom: var(--space-2);
   text-transform: uppercase;
@@ -1301,8 +1300,8 @@ ul, ol { list-style: none; }
 .trabajo-modal__backdrop {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.8);
-  backdrop-filter: blur(8px);
+  background: rgba(0,0,0,0.7);
+  backdrop-filter: blur(6px);
   opacity: 0;
   transition: opacity 0.4s ease;
   z-index: 9998;
@@ -1615,19 +1614,18 @@ ul, ol { list-style: none; }
 }
 .contacto-cta {
   display: inline-flex; align-items: center; justify-content: center;
-  height: 50px; padding: 0 var(--space-5);
+  height: 44px; padding: 0 var(--space-5);
   background: var(--color-primary);
   color: var(--color-surface);
   font-family: var(--font-functional);
-  font-size: 18px; font-weight: 700;
+  font-size: 16px; font-weight: 700;
   border-radius: var(--rounded-button);
   transition: background 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
-  box-shadow: 0 4px 16px rgba(184, 41, 37, 0.2);
 }
 .contacto-cta:hover {
   background: var(--color-primary-dark);
-  transform: translateY(-3px);
-  box-shadow: 0 8px 28px rgba(184, 41, 37, 0.35);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(184, 41, 37, 0.25);
 }
 .contacto-cta:active { transform: scale(0.97) translateY(0); }
 
@@ -1754,7 +1752,7 @@ ul, ol { list-style: none; }
    SEPARATOR (turquesa)
    ========================================== */
 .separator {
-  height: 2px;
+  height: 1px;
   background: linear-gradient(90deg, transparent 0%, var(--color-accent) 50%, transparent 100%);
   max-width: 800px;
   margin: 0 auto;
@@ -2190,8 +2188,8 @@ ul, ol { list-style: none; }
               box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1);
 }
 .trabajo-card:hover {
-  transform: scale(1.04) translateY(-6px);
-  box-shadow: 0 20px 48px rgba(0,0,0,0.18);
+  transform: scale(1.03) translateY(-4px);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.12);
 }
 
 .contacto-cta {
@@ -2748,10 +2746,10 @@ ul, ol { list-style: none; }
     <h2 class="section-title typewriter-reveal" id="contacto-title">Contacto</h2>
     <p class="section-subtitle">para diseñar juntxs</p>
 
-    <p style="max-width:480px; margin:0 auto var(--space-4); font-size:17px;">
+    <p style="max-width:480px; margin:0 auto var(--space-4); font-size:16px; line-height:1.6;">
       Las buenas ideas también empiezan con una conversación, un buen café de olla y una pizca de curiosidad.
     </p>
-    <p style="max-width:480px; margin:0 auto var(--space-4); font-size:17px;">
+    <p style="max-width:480px; margin:0 auto var(--space-4); font-size:16px; line-height:1.6;">
       Si te interesa mi trabajo, me encantaría trabajar contigo, escuchar tus ideas y descubrir qué podemos crear.
     </p>
 
@@ -2980,7 +2978,7 @@ ul, ol { list-style: none; }
     var starColors = [
       '#B82925', // rojo corazón
       '#00A79D', // turquesa
-      '#6081BC', // azul creativo
+      '#3D5A8A', // azul creativo
       '#E77A77', // rojo claro
       '#4FD1C5', // turquesa claro
       '#90CDF4'  // azul claro
