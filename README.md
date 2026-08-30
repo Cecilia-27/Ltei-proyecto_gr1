@@ -5,7 +5,7 @@ Portafolio personal de diseño gráfico y UX/UI. Una landing page que combina id
 ## Páginas publicadas
 
 - **Portafolio principal** → https://cecilia-27.github.io/Ltei-proyecto_gr1/
-- **Página de diseño** → https://cecilia-27.github.io/Ltei-proyecto_gr1/design.html
+- **Página de diseño** → https://cecilia-27.github.io/El-corazon-de-Ceci/
 
 ## Documentación del repositorio
 
